@@ -41,3 +41,33 @@ header .header--menu ul li:hover{
     cursor: pointer;
     color: var(--color-highlight);
 }
+
+.main--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 600px;
+    width: 80%;
+    margin: auto;
+}
+
+.main--container .book--container{
+    height: 400px;
+}
+
+.main--container .about_us--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.main--container .about_us--container img{
+    box-shadow: black 0 0 5px;
+    border-radius: 5px;
+}
+
+.main--container .about_us--container p{
+    font-size: 1.5rem;
+}

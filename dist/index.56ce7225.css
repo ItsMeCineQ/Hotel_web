@@ -43,4 +43,34 @@ header .header--menu ul li:hover {
   color: var(--color-highlight);
 }
 
+.main--container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 600px;
+  margin: auto;
+  display: flex;
+}
+
+.main--container .book--container {
+  height: 400px;
+}
+
+.main--container .about_us--container {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+.main--container .about_us--container img {
+  border-radius: 5px;
+  box-shadow: 0 0 5px #000;
+}
+
+.main--container .about_us--container p {
+  font-size: 1.5rem;
+}
+
 /*# sourceMappingURL=index.56ce7225.css.map */
