@@ -48,13 +48,23 @@ header .header--menu ul li:hover {
   justify-content: center;
   align-items: center;
   width: 80%;
-  height: 600px;
   margin: auto;
   display: flex;
 }
 
 .main--container .book--container {
   height: 400px;
+  margin-top: 5rem;
+}
+
+.main--container .book--container .form--book button {
+  background-color: var(--color-light);
+  border: none;
+  height: 40px;
+}
+
+.main--container .book--container .form--book .form--submit .icon--search {
+  width: 25px;
 }
 
 .main--container .about_us--container {
