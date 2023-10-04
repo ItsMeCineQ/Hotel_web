@@ -117,3 +117,40 @@ header h1{
     width: 30px;
     height: 30px;
 }
+
+footer{
+    background-color: var(--color-header);
+    height: 250px;
+}
+
+.footer--info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem 0;
+    gap: 1rem;
+}
+
+.footer--info span{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form--footer{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.form--footer input{
+    height: 30px;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.form--footer .form--footer-message{
+    height: 100px;
+    width: 300px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
