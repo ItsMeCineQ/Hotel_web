@@ -51,8 +51,9 @@ header h1 {
 }
 
 .slider--container img {
+  width: 1600px;
   position: relative;
-  top: -200px;
+  top: -500px;
 }
 
 .main--container {
