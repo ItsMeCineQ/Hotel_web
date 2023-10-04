@@ -43,6 +43,18 @@ header h1 {
   color: var(--color-highlight);
 }
 
+.slider--container {
+  width: 80%;
+  height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider--container img {
+  position: relative;
+  top: -200px;
+}
+
 .main--container {
   flex-direction: column;
   justify-content: center;
