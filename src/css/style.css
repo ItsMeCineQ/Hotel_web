@@ -26,18 +26,18 @@ header h1{
     color: var(--color-logo);
 }
 
-header .header--menu ul{
+.header--menu ul{
     display: flex;
     gap: 1.5rem;
 }
 
-header .header--menu ul li{
+.header--menu ul li{
     list-style-type: none;
     font-size: 1.5rem;
     color: var(--color-light)
 }
 
-header .header--menu ul li:hover{
+.header--menu ul li:hover{
     cursor: pointer;
     color: var(--color-highlight);
 }
@@ -51,34 +51,69 @@ header .header--menu ul li:hover{
     margin: auto;
 }
 
-.main--container .book--container{
+.book--container{
     height: 400px;
     margin-top: 5rem;
 }
 
-.main--container .book--container .form--book button{
-    background-color: var(--color-light);
-    border: none;
-    height: 40px;
-}
-
-.main--container .book--container .form--book .form--submit .icon--search{
+.icon--search{
     width: 25px;
 }
 
-.main--container .about_us--container{
+.about_us--container{
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 }
 
-.main--container .about_us--container img{
+.about_us--container img{
     box-shadow: black 0 0 5px;
     border-radius: 5px;
 }
 
-.main--container .about_us--container p{
+.about_us--container p{
     font-size: 1.5rem;
 }
 
+.form--book{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form--book label{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.form--select{
+    height: 30px;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.form--date{
+    height: 30px;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.form--book button{
+    background-color: transparent;
+    border: none;
+    border-radius: 25px;
+    height: 50px;
+    width: 60px;
+}
+
+.form--book button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px black;
+}
+
+.form--submit img{
+    width: 30px;
+    height: 30px;
+}
