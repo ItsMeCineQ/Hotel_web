@@ -180,15 +180,46 @@ header h1{
 
 .reviews--container{
     margin-top: 5rem;
-    width: 500px;
+    width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .reviews--container span{
     font-size: 1.5rem;
+    text-align: justify;
+    color: #646363;
 }
 
-.reviews--slider img{
+.reviews--container img{
     width: 80px;
+    margin: 0 2rem;
+}
+
+.reviews--slider{
+    height: 200px;
+    width: 700px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+    padding: 15px 0;
+}
+
+.button--reviews{
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+}
+
+.icon--quote-start{
+    align-self: flex-start;
+}
+
+.icon--quote-end{
+    transform: rotate(180deg);
+    align-self: flex-end;
 }
 
 .icon--quote-right{

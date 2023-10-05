@@ -172,16 +172,47 @@ header h1 {
 }
 
 .reviews--container {
-  width: 500px;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
   margin-top: 5rem;
+  display: flex;
 }
 
 .reviews--container span {
+  text-align: justify;
+  color: #646363;
   font-size: 1.5rem;
 }
 
-.reviews--slider img {
+.reviews--container img {
   width: 80px;
+  margin: 0 2rem;
+}
+
+.reviews--slider {
+  border-radius: 10px;
+  align-items: center;
+  width: 700px;
+  height: 200px;
+  padding: 15px 0;
+  display: flex;
+  box-shadow: 0 0 3px #000;
+}
+
+.button--reviews {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+}
+
+.icon--quote-start {
+  align-self: flex-start;
+}
+
+.icon--quote-end {
+  align-self: flex-end;
+  transform: rotate(180deg);
 }
 
 .icon--quote-right {
