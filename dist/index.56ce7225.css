@@ -171,6 +171,23 @@ header h1 {
   height: 30px;
 }
 
+.reviews--container {
+  width: 500px;
+  margin-top: 5rem;
+}
+
+.reviews--container span {
+  font-size: 1.5rem;
+}
+
+.reviews--slider img {
+  width: 80px;
+}
+
+.icon--quote-right {
+  transform: rotate(180deg);
+}
+
 footer {
   background-color: var(--color-header);
   height: 250px;
