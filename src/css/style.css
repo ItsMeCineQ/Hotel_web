@@ -54,23 +54,38 @@ header h1{
     margin: 0 auto;
 }
 
-.slider--arrow{
-    width: 70px;
+.button--arrow{
+    width: 50px;
     height: 50px;
     z-index: 111;
     position: absolute;
     top: 250px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b16117cc;
+    border: none;
 }
 
-.slider--arrow-left{
+.button--arrow-left{
     left: 250px;
 }
 
-.slider--arrow-right{
+.slider--container .button--arrow-left img{
+    width: 30px;
+}
+
+.slider--container .button--arrow-right img{
+    width: 30px;
+    transform: rotate(180deg);
+}
+
+.button--arrow-right{
     right: 250px;
 }
 
-.slider--container img{
+.slider--image{
     position: relative;
     top: -500px;
     width: 1600px;

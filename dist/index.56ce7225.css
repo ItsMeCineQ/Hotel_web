@@ -55,23 +55,37 @@ header h1 {
   overflow: hidden;
 }
 
-.slider--arrow {
+.button--arrow {
   z-index: 111;
-  width: 70px;
+  background-color: #b16117cc;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
   height: 50px;
+  display: flex;
   position: absolute;
   top: 250px;
 }
 
-.slider--arrow-left {
+.button--arrow-left {
   left: 250px;
 }
 
-.slider--arrow-right {
+.slider--container .button--arrow-left img {
+  width: 30px;
+}
+
+.slider--container .button--arrow-right img {
+  width: 30px;
+  transform: rotate(180deg);
+}
+
+.button--arrow-right {
   right: 250px;
 }
 
-.slider--container img {
+.slider--image {
   z-index: -1;
   width: 1600px;
   position: relative;
