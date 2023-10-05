@@ -38,9 +38,14 @@ header h1 {
   list-style-type: none;
 }
 
-.header--menu ul li:hover {
+.header--menu ul li a:hover {
   cursor: pointer;
   color: var(--color-highlight);
+}
+
+.header--menu ul li a {
+  color: var(--color-light);
+  text-decoration: none;
 }
 
 .slider--container {
@@ -50,7 +55,24 @@ header h1 {
   overflow: hidden;
 }
 
+.slider--arrow {
+  z-index: 111;
+  width: 70px;
+  height: 50px;
+  position: absolute;
+  top: 250px;
+}
+
+.slider--arrow-left {
+  left: 250px;
+}
+
+.slider--arrow-right {
+  right: 250px;
+}
+
 .slider--container img {
+  z-index: -1;
   width: 1600px;
   position: relative;
   top: -500px;
@@ -91,9 +113,12 @@ header h1 {
 }
 
 .form--book {
+  background-color: var(--color-logo);
+  color: var(--color-light);
   justify-content: center;
   align-items: center;
   margin-top: 3rem;
+  padding: 1rem;
   display: flex;
 }
 
@@ -118,7 +143,7 @@ header h1 {
 
 .form--book button:hover {
   cursor: pointer;
-  box-shadow: 0 0 5px #000;
+  box-shadow: 0 0 5px var(--color-light);
 }
 
 .form--submit img {
@@ -129,6 +154,7 @@ header h1 {
 footer {
   background-color: var(--color-header);
   height: 250px;
+  margin-top: 3rem;
 }
 
 .footer--info {
