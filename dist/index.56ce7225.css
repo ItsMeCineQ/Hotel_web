@@ -49,9 +49,12 @@ header h1 {
 }
 
 .slider--container {
+  justify-content: space-between;
+  align-items: center;
   width: 80%;
   height: 400px;
-  margin: 0 auto;
+  margin: 3rem auto 0;
+  display: flex;
   overflow: hidden;
 }
 
@@ -65,7 +68,11 @@ header h1 {
   height: 50px;
   display: flex;
   position: absolute;
-  top: 250px;
+}
+
+.button--arrow:hover {
+  cursor: pointer;
+  background-color: var(--color-header);
 }
 
 .button--arrow-left {
@@ -89,7 +96,6 @@ header h1 {
   z-index: -1;
   width: 1600px;
   position: relative;
-  top: -500px;
 }
 
 .main--container {
