@@ -264,37 +264,42 @@ header h1{
 }
 
 footer{
-    background-color: var(--color-header);
-    height: 250px;
+    background-color: #b161178f;
+    height: 100px;
     margin-top: 3rem;
 }
 
-.footer--info{
+.contact--container{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2rem 0;
+    padding: 2rem;
+    margin-top: 10rem;
     gap: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 0 4px black;
+    background-color: var(--color-light);
 }
 
-.footer--info span{
+.contact--container span{
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.form--footer{
+.form--contact{
     display: flex;
+    flex-direction: column;
     gap: 0.5rem;
 }
 
-.form--footer input{
+.form--contact input{
     height: 30px;
     padding: 0 0.5rem;
     font-size: 1.2rem;
 }
 
-.form--footer .form--footer-message{
+.form--contact .form--contact-message{
     height: 100px;
     width: 300px;
     padding: 0.5rem;
