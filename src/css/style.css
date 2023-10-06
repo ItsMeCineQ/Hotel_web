@@ -9,7 +9,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: courier;
 }
 
 header{
@@ -17,7 +17,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: var(--color-header);
+    border-bottom: solid 2px var(--color-dark);
 }
 
 header h1{
@@ -29,22 +29,40 @@ header h1{
 .header--menu ul{
     display: flex;
     gap: 1.5rem;
+    font-family: Courier;
 }
 
 .header--menu ul li{
     list-style-type: none;
     font-size: 1.5rem;
-    color: var(--color-light)
+    color: var(--color-logo)
 }
 
 .header--menu ul li a:hover{
     cursor: pointer;
-    color: var(--color-highlight);
+    /* color: var(--color-highlight); */
 }
 
 .header--menu ul li a{
     text-decoration: none;
-    color: var(--color-light);
+    color: var(--color-logo);
+    position: relative;
+    display: inline-block;
+}
+
+.header--menu ul li a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-logo);
+    transition: width 0.25s ease-out;
+}
+
+.header--menu ul li a:hover::before{
+    width: 100%;
 }
 
 .slider--container{
@@ -190,6 +208,7 @@ header h1{
     font-size: 1.5rem;
     text-align: justify;
     color: #646363;
+    font-style: italic;
 }
 
 .reviews--container img{
@@ -199,7 +218,7 @@ header h1{
 
 .reviews--slider{
     height: 200px;
-    width: 700px;
+    width: 900px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -211,7 +230,7 @@ header h1{
 .button--reviews{
     position: absolute;
     bottom: 0;
-    left: 320px;
+    left: 420px;
     width: 40px;
     height: 20px;
     margin: 10px;
