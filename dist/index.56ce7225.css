@@ -281,14 +281,21 @@ footer {
 
 .form--contact {
   flex-direction: column;
-  gap: .5rem;
+  gap: 1rem;
   display: flex;
 }
 
-.form--contact input {
+.form--contact input, .form--contact select {
+  border: none;
+  border-radius: 10px;
   height: 30px;
   padding: 0 .5rem;
   font-size: 1.2rem;
+}
+
+.form--contact textarea {
+  border: none;
+  border-radius: 10px;
 }
 
 .form--contact .form--contact-message {

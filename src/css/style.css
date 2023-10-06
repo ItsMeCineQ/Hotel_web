@@ -290,13 +290,28 @@ footer{
 .form--contact{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .form--contact input{
     height: 30px;
     padding: 0 0.5rem;
     font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.form--contact select{
+    height: 30px;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.form--contact textarea{
+    border-radius: 10px;
+    border: none;
 }
 
 .form--contact .form--contact-message{
