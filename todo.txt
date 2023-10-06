@@ -1,0 +1,5 @@
+Dodać API mapy do rezerwowania hoteli
+Ma ona pokazywać znacznik hotelu
+Wyświetlić listę hoteli obok mapy
+Poprawić formularz kontaktowy
+Rozbudować sekcję o nas

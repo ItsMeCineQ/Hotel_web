@@ -133,6 +133,11 @@ header h1 {
   width: 25px;
 }
 
+.map--container {
+  border: 1px solid #000;
+  height: 600px;
+}
+
 .about_us--container {
   justify-content: center;
   align-items: center;
@@ -262,7 +267,6 @@ footer {
 }
 
 .contact--container {
-  background-color: var(--color-light);
   border-radius: 10px;
   flex-direction: column;
   justify-content: center;
@@ -286,6 +290,7 @@ footer {
 }
 
 .form--contact input, .form--contact select {
+  background-color: var(--color-light);
   border: none;
   border-radius: 10px;
   height: 30px;
@@ -294,6 +299,7 @@ footer {
 }
 
 .form--contact textarea {
+  background-color: var(--color-light);
   border: none;
   border-radius: 10px;
 }
@@ -303,6 +309,10 @@ footer {
   height: 100px;
   padding: .5rem;
   font-size: 1.2rem;
+}
+
+footer {
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.56ce7225.css.map */

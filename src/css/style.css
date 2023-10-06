@@ -135,6 +135,11 @@ header h1{
     width: 25px;
 }
 
+.map--container{
+    height: 600px;
+    border: solid 1px black;
+}
+
 .about_us--container{
     display: flex;
     justify-content: center;
@@ -279,7 +284,7 @@ footer{
     gap: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4px black;
-    background-color: var(--color-light);
+    
 }
 
 .contact--container span{
@@ -299,6 +304,7 @@ footer{
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
+    background-color: var(--color-light);
 }
 
 .form--contact select{
@@ -307,11 +313,13 @@ footer{
     font-size: 1.2rem;
     border-radius: 10px;
     border: none;
+    background-color: var(--color-light);
 }
 
 .form--contact textarea{
     border-radius: 10px;
     border: none;
+    background-color: var(--color-light);
 }
 
 .form--contact .form--contact-message{
@@ -319,4 +327,8 @@ footer{
     width: 300px;
     padding: 0.5rem;
     font-size: 1.2rem;
+}
+
+footer{
+    text-align: center;
 }
