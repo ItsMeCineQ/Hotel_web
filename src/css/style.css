@@ -127,7 +127,7 @@ header h1{
 }
 
 .book--container{
-    height: 400px;
+/*     height: 400px; */
     margin-top: 5rem;
 }
 
@@ -202,7 +202,6 @@ header h1{
 }
 
 .reviews--container{
-    margin-top: 5rem;
     width: 900px;
     display: flex;
     justify-content: center;
@@ -280,7 +279,7 @@ footer{
     align-items: center;
     flex-direction: column;
     padding: 2rem;
-    margin-top: 10rem;
+    margin: 10rem 0;
     gap: 1rem;
     border-radius: 10px;
     box-shadow: 0 0 4px black;
@@ -336,5 +335,5 @@ footer{
 .main--container hr{
     border-top: 1px solid black;
     width: 100%;
-    margin: 5rem;
+    margin: 10rem;
 }
