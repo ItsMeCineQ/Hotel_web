@@ -267,12 +267,6 @@ header h1{
     transform: rotate(180deg);
 }
 
-footer{
-    background-color: #b161178f;
-    height: 100px;
-    margin-top: 3rem;
-}
-
 .contact--container{
     display: flex;
     justify-content: center;
@@ -329,7 +323,13 @@ footer{
 }
 
 footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-logo);
+    color: var(--color-light);
+    height: 70px;
+    margin-top: 3rem;
 }
 
 .main--container hr{
