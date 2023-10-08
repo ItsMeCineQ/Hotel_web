@@ -20,10 +20,12 @@ header{
     border-bottom: solid 2px var(--color-dark);
 }
 
-header h1{
+.header--logo{
     font-size: 2.5rem;
     user-select: none;
     color: var(--color-logo);
+    border: 2px solid var(--color-logo);
+    padding: 0.5rem;
 }
 
 .header--menu ul{
