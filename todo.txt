@@ -3,3 +3,13 @@ Ma ona pokazywać znacznik hotelu
 Wyświetlić listę hoteli obok mapy
 Poprawić formularz kontaktowy
 Rozbudować sekcję o nas
+Dane dotyczące rezerwacji hoteli - zrobić API. Stworzyć obiekt, w którym będą takie informacje jak: 
+ - Nazwa hotelu,
+ - Adres hotelu,
+ - Dane kontaktowe hotelu,
+ - Rodzaj pokoju + ilość osób,
+ - Ceny pokojów uzależnione od daty i od tego w jak odległej przyszłości pokój zostanie zarezerwowany (im dalszy termin tym tańszy pokój)
+ - Dodać kody promocyjne,
+ - Dodać zniżkę dla stałego gościa,
+ - Dodać usługi dodatkowe (np. parking, wino, czekoladki, mini barek)
+ - Dodać usługę dla zwierząt (w zależności od rodzaju pupila cena będzie się różnić)
