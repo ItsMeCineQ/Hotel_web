@@ -321,6 +321,11 @@ footer {
   margin: 10rem;
 }
 
+.sticky {
+  background-color: #ffffffd0;
+  position: fixed;
+}
+
 .section {
   transition: transform 1s, opacity 1s;
 }
