@@ -321,4 +321,13 @@ footer {
   margin: 10rem;
 }
 
+.section {
+  transition: transform 1s, opacity 1s;
+}
+
+.section--hidden {
+  opacity: 0;
+  transform: translateY(150px);
+}
+
 /*# sourceMappingURL=index.56ce7225.css.map */
