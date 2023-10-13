@@ -147,19 +147,32 @@ header {
 }
 
 .about_us--container {
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   display: flex;
 }
 
-.about_us--container img {
+.about_us--content {
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  display: flex;
+}
+
+.about_us--content img {
   border-radius: 5px;
   box-shadow: 0 0 5px #000;
 }
 
-.about_us--container p {
+.about_us--content p {
   font-size: 1.5rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
 }
 
 .form--book {
@@ -273,7 +286,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin: 10rem 0;
+  margin: 5rem 0;
   padding: 2rem;
   display: flex;
   box-shadow: 0 0 4px #000;
