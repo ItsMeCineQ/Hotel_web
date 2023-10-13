@@ -268,8 +268,9 @@ header {
   background-image: linear-gradient(to top, #fff, #0000);
   width: 100%;
   height: 50px;
-  position: absolute;
-  bottom: 0;
+  position: sticky;
+  bottom: 50px;
+  left: 0;
 }
 
 .reviews--bottom-hidden {

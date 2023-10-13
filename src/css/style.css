@@ -274,9 +274,10 @@ header{
 }
 
 .reviews--bottom{
-    position: absolute;
-    bottom: 0;
     height: 50px;
+    position: sticky;
+    bottom: 50px;
+    left: 0;
     width: 100%;
     background-image: linear-gradient(to top, white, transparent);
 }

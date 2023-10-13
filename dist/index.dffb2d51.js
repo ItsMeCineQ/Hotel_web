@@ -12,8 +12,7 @@ btnReviews.addEventListener("click", function() {
     btnReviews.classList.toggle("button--reviews-expand");
     btnReviews.classList.toggle("expand");
     btnReviews.classList.toggle("button--reviews-rotate");
-    bottomRevievs.classList.toggle("reviews--bottom-hidden");
-    if (!sectionReviews.classList.contains("reviews--expand")) sectionReviews.classList.add("reviews--collapse");
+    /* bottomRevievs.classList.toggle('reviews--bottom-hidden'); */ if (!sectionReviews.classList.contains("reviews--expand")) sectionReviews.classList.add("reviews--collapse");
     else sectionReviews.classList.remove("reviews--collapse");
     if (!sectionReviews.classList.contains("reviews-expand")) firstReview.scrollIntoView({
         behavior: "smooth"
