@@ -20,6 +20,13 @@ header {
   display: flex;
 }
 
+.nav--menu {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  display: flex;
+}
+
 .header--logo {
   -webkit-user-select: none;
   user-select: none;
@@ -322,8 +329,10 @@ footer {
 }
 
 .sticky {
-  background-color: #ffffffd0;
+  background-color: #ffffffe8;
+  width: 100%;
   position: fixed;
+  top: 0;
 }
 
 .section {

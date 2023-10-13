@@ -1,21 +1,23 @@
 'use strict'
 
-const nav = document.querySelector('.nav--menu');
-const sectionAboutUs = document.querySelector('.about_us--line');
+const header = document.querySelector('.header');
+const sectionAboutUs = document.querySelector('.about_us--container');
+const headerStickySections = document.querySelectorAll('.sticky--nav')
 const allSections = document.querySelectorAll('.section');
 
 const stickyNav = function(entries){
     const [entry] = entries;
-    if(!entry.isIntersecting) nav.classList.add('sticky');
-    else nav.classList.remove('sticky');
+    if(!entry.isIntersecting) header.classList.remove('sticky');
+    else header.classList.add('sticky');
+    console.log(entry);
 };
 
-const navObserver = new IntersectionObserver(stickyNav, {
+const headerObserver = new IntersectionObserver(stickyNav, {
     root: null,
     threshold: 0,
 });
 
-navObserver.observe(nav);
+headerObserver.observe(sectionAboutUs);
 
 const revealSection = function(entries, observer){
     const [entry] = entries;

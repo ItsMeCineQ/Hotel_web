@@ -20,6 +20,13 @@ header{
     border-bottom: solid 2px var(--color-dark);
 }
 
+.nav--menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .header--logo{
     font-size: 2.5rem;
     user-select: none;
@@ -342,7 +349,9 @@ footer{
 
 .sticky{
     position: fixed;
-    background-color: #ffffffd0;
+    top: 0;
+    width: 100%;
+    background-color: #ffffffe8;
 }
 
 .section{
