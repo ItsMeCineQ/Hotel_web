@@ -273,6 +273,18 @@ header{
     animation-name: collapseAnimation;
 }
 
+.reviews--bottom{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-image: linear-gradient(to top, white, transparent);
+}
+
+.reviews--bottom-hidden{
+    display: none;
+}
+
 .button--reviews{
     position: sticky;
     bottom: 10px;
@@ -406,7 +418,7 @@ footer{
 
 @keyframes expandAnimation{
     0% {
-        height: 0;
+        height: 350px;
     }
     100% {
         height: 700px;
@@ -418,6 +430,6 @@ footer{
         height: 700px;
     }
     100% {
-        height: 300px;
+        height: 350px;
     }
 }

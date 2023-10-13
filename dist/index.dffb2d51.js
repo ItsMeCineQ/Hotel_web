@@ -3,12 +3,14 @@ const header = document.querySelector(".header");
 const sectionAboutUs = document.querySelector(".about_us--container");
 const sectionReviews = document.querySelector(".reviews--container");
 const firstReview = document.querySelector(".first--review");
+const bottomRevievs = document.querySelector(".reviews--bottom");
 const headerStickySections = document.querySelectorAll(".sticky--nav");
 const allSections = document.querySelectorAll(".section");
 const btnReviews = document.querySelector(".button--reviews");
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
     btnReviews.classList.toggle("button--reviews-expand");
+    bottomRevievs.classList.toggle("reviews--bottom-hidden");
     if (!sectionReviews.classList.contains("reviews--expand")) sectionReviews.classList.add("reviews--collapse");
     else sectionReviews.classList.remove("reviews--collapse");
     if (!sectionReviews.classList.contains("reviews-expand")) firstReview.scrollIntoView({
