@@ -226,10 +226,9 @@ header{
 .reviews--container{
     position: relative;
     width: 900px;
-    height: 300px;
+    height: 350px;
     overflow: hidden;
     display: flex;
-    /* justify-content: center; */
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
@@ -250,7 +249,7 @@ header{
 }
 
 .reviews--review{
-    height: 200px;
+    min-height: 200px;
     display: flex;
     align-items: center;
     padding: 15px 0;
@@ -268,8 +267,8 @@ header{
 }
 
 .button--reviews{
-    position: absolute;
-    bottom: 0;
+    position: sticky;
+    bottom: 10px;
     left: 400px;
     width: 40px;
     height: 20px;
@@ -279,6 +278,12 @@ header{
     align-items: center;
     border: none;
     background-color: transparent;
+    z-index: 111;
+}
+
+.button--reviews-expanded{
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .button--reviews:hover{
