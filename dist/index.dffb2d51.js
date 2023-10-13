@@ -1,8 +1,13 @@
 "use strict";
 const header = document.querySelector(".header");
 const sectionAboutUs = document.querySelector(".about_us--container");
+const sectionReviews = document.querySelector(".reviews--container");
 const headerStickySections = document.querySelectorAll(".sticky--nav");
-const allSections = document.querySelectorAll(".section"); /* const stickyNav = function(entries){
+const allSections = document.querySelectorAll(".section");
+const btnReviews = document.querySelector(".button--reviews");
+btnReviews.addEventListener("click", function() {
+    sectionReviews.classList.toggle("reviews--expand");
+}); /* const stickyNav = function(entries){
     const [entry] = entries;
     if(!entry.isIntersecting) header.classList.add('sticky');
     else header.classList.remove('sticky');
