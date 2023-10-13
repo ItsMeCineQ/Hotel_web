@@ -2,8 +2,7 @@
 const header = document.querySelector(".header");
 const sectionAboutUs = document.querySelector(".about_us--container");
 const headerStickySections = document.querySelectorAll(".sticky--nav");
-const allSections = document.querySelectorAll(".section");
-/* const stickyNav = function(entries){
+const allSections = document.querySelectorAll(".section"); /* const stickyNav = function(entries){
     const [entry] = entries;
     if(!entry.isIntersecting) header.classList.add('sticky');
     else header.classList.remove('sticky');
@@ -15,18 +14,20 @@ const headerObserver = new IntersectionObserver(stickyNav, {
     threshold: 0,
 });
 
-headerObserver.observe(header); */ const revealSection = function(entries, observer) {
+headerObserver.observe(header); */  /* const revealSection = function(entries, observer){
     const [entry] = entries;
-    if (!entry.isIntersecting) return;
-    entry.target.classList.remove("section--hidden");
+    if(!entry.isIntersecting) return;
+    entry.target.classList.remove('section--hidden');
 };
-const sectionObserver = new IntersectionObserver(revealSection, {
+
+const sectionObserver = new IntersectionObserver(revealSection,{
     root: null,
-    threshold: 0.15
+    threshold: 0.15,
 });
-allSections.forEach(function(section) {
+
+allSections.forEach(function(section){
     sectionObserver.observe(section);
-    section.classList.add("section--hidden");
-});
+    section.classList.add('section--hidden');
+}); */ 
 
 //# sourceMappingURL=index.dffb2d51.js.map

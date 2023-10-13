@@ -19,7 +19,7 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 
 headerObserver.observe(header); */
 
-const revealSection = function(entries, observer){
+/* const revealSection = function(entries, observer){
     const [entry] = entries;
     if(!entry.isIntersecting) return;
     entry.target.classList.remove('section--hidden');
@@ -33,4 +33,4 @@ const sectionObserver = new IntersectionObserver(revealSection,{
 allSections.forEach(function(section){
     sectionObserver.observe(section);
     section.classList.add('section--hidden');
-});
+}); */
