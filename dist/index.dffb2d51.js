@@ -10,6 +10,8 @@ const btnReviews = document.querySelector(".button--reviews");
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
     btnReviews.classList.toggle("button--reviews-expand");
+    btnReviews.classList.toggle("expand");
+    btnReviews.classList.toggle("button--reviews-rotate");
     bottomRevievs.classList.toggle("reviews--bottom-hidden");
     if (!sectionReviews.classList.contains("reviews--expand")) sectionReviews.classList.add("reviews--collapse");
     else sectionReviews.classList.remove("reviews--collapse");

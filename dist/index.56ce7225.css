@@ -291,9 +291,9 @@ header {
   left: 400px;
 }
 
-.button--reviews-expanded {
-  left: 50%;
-  transform: translate(-50%);
+.button--reviews-rotate {
+  transition: all .5s;
+  transform: rotateX(180deg);
 }
 
 .button--reviews:hover {

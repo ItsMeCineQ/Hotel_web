@@ -300,9 +300,9 @@ header{
     z-index: 111;
 }
 
-.button--reviews-expanded{
-    left: 50%;
-    transform: translate(-50%);
+.button--reviews-rotate{
+    transform: rotateX(180deg);
+    transition: 0.5s;
 }
 
 .button--reviews:hover{
