@@ -1,13 +1,26 @@
 "use strict";
 const header = document.querySelector(".header");
-const sectionAboutUs = document.querySelector(".about_us--container");
-const sectionReviews = document.querySelector(".reviews--container");
+const sectionHome = document.querySelector("#home");
+const sectionBook = document.querySelector("#book");
+const sectionAboutUs = document.querySelector("#about_us");
+const sectionReviews = document.querySelector("#reviews");
+const sectionContact = document.querySelector("#contact");
+const navLink = document.querySelectorAll(".nav--link");
 const firstReview = document.querySelector(".first--review");
 const bottomRevievs = document.querySelector(".reviews--bottom");
 const headerStickySections = document.querySelectorAll(".sticky--nav");
 const allSections = document.querySelectorAll(".section");
 const iconArrow = document.querySelector(".icon--arrow");
 const btnReviews = document.querySelector(".button--reviews");
+navLink.forEach((el)=>{
+    el.addEventListener("click", function(e) {
+        e.preventDefault();
+        const id = this.getAttribute("href");
+        document.querySelector(id).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
     btnReviews.classList.toggle("button--reviews-expand");
