@@ -279,9 +279,9 @@ header {
   left: 400px;
 }
 
-.rotate {
+.icon--arrow.rotate {
   transition: all .5s;
-  transform: rotateX(180deg);
+  transform: rotate(-90deg);
 }
 
 .button--reviews:hover {

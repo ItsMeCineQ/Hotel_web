@@ -288,8 +288,8 @@ header{
     z-index: 111;
 }
 
-.rotate{
-    transform: rotateX(180deg);
+.icon--arrow.rotate{
+    transform: rotate(-90deg);
     transition: 0.5s;
 }
 

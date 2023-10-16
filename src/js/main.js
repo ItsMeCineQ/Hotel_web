@@ -7,7 +7,7 @@ const firstReview = document.querySelector('.first--review');
 const bottomRevievs = document.querySelector('.reviews--bottom');
 const headerStickySections = document.querySelectorAll('.sticky--nav');
 const allSections = document.querySelectorAll('.section');
-const imageArrow = document.querySelector('.icon--arrow');
+const iconArrow = document.querySelector('.icon--arrow');
 
 const btnReviews = document.querySelector('.button--reviews');
 
@@ -15,7 +15,7 @@ btnReviews.addEventListener('click', function(){
     sectionReviews.classList.toggle('reviews--expand');
     btnReviews.classList.toggle('button--reviews-expand');
     btnReviews.classList.toggle('expand');
-    btnReviews.closest('rotate');
+    iconArrow.classList.toggle('rotate');
     /* bottomRevievs.classList.toggle('reviews--bottom-hidden'); */
     if(!sectionReviews.classList.contains('reviews--expand')){
         sectionReviews.classList.add('reviews--collapse');
