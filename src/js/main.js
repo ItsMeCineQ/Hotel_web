@@ -20,6 +20,7 @@ const btnArrowLeft = document.querySelector('.button--arrow-left');
 const btnArrowRight = document.querySelector('.button--arrow-right');
 
 let curSlide = 0;
+let interval;
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
@@ -60,10 +61,22 @@ const previousSlide = function(){
     sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
 };
 
-btnArrowRight.addEventListener('click', nextSlide);
-btnArrowLeft.addEventListener('click', previousSlide);
+btnArrowRight.addEventListener('click', function(){
+    clearInterval(interval);
+    nextSlide();
+    autoSlider();
+});
+btnArrowLeft.addEventListener('click', function(){
+    clearInterval(interval);
+    previousSlide();
+    autoSlider();
+});
 
-setInterval(nextSlide, 5000);
+const autoSlider = () => {
+    interval = setInterval(nextSlide, 5000);
+};
+
+autoSlider();
 
 /* const showImage = function(index){
     sliderImages.forEach((img, i) => {

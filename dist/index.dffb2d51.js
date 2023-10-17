@@ -17,6 +17,7 @@ const btnReviews = document.querySelector(".button--reviews");
 const btnArrowLeft = document.querySelector(".button--arrow-left");
 const btnArrowRight = document.querySelector(".button--arrow-right");
 let curSlide = 0;
+let interval;
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -50,9 +51,20 @@ const previousSlide = function() {
     curSlide--;
     sliderImages.forEach((s, i)=>s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
 };
-btnArrowRight.addEventListener("click", nextSlide);
-btnArrowLeft.addEventListener("click", previousSlide);
-setInterval(nextSlide, 5000); /* const showImage = function(index){
+btnArrowRight.addEventListener("click", function() {
+    clearInterval(interval);
+    nextSlide();
+    autoSlider();
+});
+btnArrowLeft.addEventListener("click", function() {
+    clearInterval(interval);
+    previousSlide();
+    autoSlider();
+});
+const autoSlider = ()=>{
+    interval = setInterval(nextSlide, 5000);
+};
+autoSlider(); /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
         if(i === index) Image.style.display = 'block';
         else Image.style.display = 'none';
