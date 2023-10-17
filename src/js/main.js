@@ -48,17 +48,22 @@ sliderImages.forEach((s, i) => {
     s.style.transform = `translateX(${100 * i}%)`;
 });
 
-btnArrowRight.addEventListener('click', function(){
+const nextSlide = function(){
     if(curSlide === sliderImages.length - 1) curSlide = -1;
     curSlide++;
     sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
-});
+};
 
-btnArrowLeft.addEventListener('click', function(){
+const previousSlide = function(){
     if(curSlide === 0) curSlide = sliderImages.length;
     curSlide--;
     sliderImages.forEach((s, i) => s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
-});
+};
+
+btnArrowRight.addEventListener('click', nextSlide);
+btnArrowLeft.addEventListener('click', previousSlide);
+
+setInterval(nextSlide, 5000);
 
 /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
