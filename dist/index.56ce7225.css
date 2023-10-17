@@ -81,6 +81,7 @@ header {
   height: 400px;
   margin: 3rem auto 0;
   display: flex;
+  position: relative;
   overflow: hidden;
 }
 
@@ -102,7 +103,7 @@ header {
 }
 
 .button--arrow-left {
-  left: 250px;
+  left: 25px;
 }
 
 .slider--container .button--arrow-left img {
@@ -115,13 +116,17 @@ header {
 }
 
 .button--arrow-right {
-  right: 250px;
+  right: 25px;
 }
 
 .slider--image {
   z-index: -1;
-  min-width: 100%;
-  position: relative;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  position: absolute;
+  top: 0;
 }
 
 .main--container {

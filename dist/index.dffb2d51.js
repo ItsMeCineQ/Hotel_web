@@ -16,6 +16,7 @@ const iconArrow = document.querySelector(".icon--arrow");
 const btnReviews = document.querySelector(".button--reviews");
 const btnArrowLeft = document.querySelector(".button--arrow-left");
 const btnArrowRight = document.querySelector(".button--arrow-right");
+let curSlide = 0;
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -36,8 +37,16 @@ btnReviews.addEventListener("click", function() {
         behavior: "smooth"
     });
 });
-btnArrowLeft.addEventListener("click", function(e) {
-    sliderImages.style.transform = "translate(-100%)";
+sliderImages.forEach((s, i)=>{
+    s.style.transform = `translate(${100 * i})%`;
+});
+btnArrowRight.addEventListener("click", function() {
+    curSlide++;
+    sliderImages.forEach((s, i)=>s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
+});
+btnArrowLeft.addEventListener("click", function() {
+    curSlide--;
+    sliderImages.forEach((s, i)=>s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
 }); /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
         if(i === index) Image.style.display = 'block';
