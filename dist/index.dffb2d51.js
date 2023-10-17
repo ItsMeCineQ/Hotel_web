@@ -38,13 +38,15 @@ btnReviews.addEventListener("click", function() {
     });
 });
 sliderImages.forEach((s, i)=>{
-    s.style.transform = `translate(${100 * i})%`;
+    s.style.transform = `translateX(${100 * i}%)`;
 });
 btnArrowRight.addEventListener("click", function() {
+    if (curSlide === sliderImages.length - 1) curSlide = -1;
     curSlide++;
     sliderImages.forEach((s, i)=>s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
 });
 btnArrowLeft.addEventListener("click", function() {
+    if (curSlide === 0) curSlide = sliderImages.length;
     curSlide--;
     sliderImages.forEach((s, i)=>s.style.transform = `translateX(${100 * (i - curSlide)}%)`);
 }); /* const showImage = function(index){
