@@ -122,7 +122,7 @@ header{
 
 .slider--image{
     position: relative;
-    width: 1600px;
+    min-width: 100%;
     z-index: -1;
 }
 

@@ -1,6 +1,8 @@
 "use strict";
 const header = document.querySelector(".header");
 const sectionHome = document.querySelector("#home");
+const sectionSlider = document.querySelector(".slider--container");
+const sliderImages = document.querySelectorAll(".slider--image");
 const sectionBook = document.querySelector("#book");
 const sectionAboutUs = document.querySelector("#about_us");
 const sectionReviews = document.querySelector("#reviews");
@@ -12,6 +14,8 @@ const headerStickySections = document.querySelectorAll(".sticky--nav");
 const allSections = document.querySelectorAll(".section");
 const iconArrow = document.querySelector(".icon--arrow");
 const btnReviews = document.querySelector(".button--reviews");
+const btnArrowLeft = document.querySelector(".button--arrow-left");
+const btnArrowRight = document.querySelector(".button--arrow-right");
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -31,7 +35,16 @@ btnReviews.addEventListener("click", function() {
     if (!sectionReviews.classList.contains("reviews-expand")) firstReview.scrollIntoView({
         behavior: "smooth"
     });
-}); /* const stickyNav = function(entries){
+});
+btnArrowLeft.addEventListener("click", function(e) {
+    sliderImages.style.transform = "translate(-100%)";
+}); /* const showImage = function(index){
+    sliderImages.forEach((img, i) => {
+        if(i === index) Image.style.display = 'block';
+        else Image.style.display = 'none';
+    });
+};
+ */  /* const stickyNav = function(entries){
     const [entry] = entries;
     if(!entry.isIntersecting) header.classList.add('sticky');
     else header.classList.remove('sticky');
