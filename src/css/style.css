@@ -171,12 +171,18 @@ header{
 }
 
 .about_us--content img{
+    min-width: 700px;
     box-shadow: black 0 0 5px;
     border-radius: 5px;
 }
 
+.lazy-img{
+    filter: blur(20px);
+}
+
 .about_us--content p{
     font-size: 1.5rem;
+    text-align: justify;
 }
 
 .reverse{

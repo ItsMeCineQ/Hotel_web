@@ -169,10 +169,16 @@ header {
 
 .about_us--content img {
   border-radius: 5px;
+  min-width: 700px;
   box-shadow: 0 0 5px #000;
 }
 
+.lazy-img {
+  filter: blur(20px);
+}
+
 .about_us--content p {
+  text-align: justify;
   font-size: 1.5rem;
 }
 
