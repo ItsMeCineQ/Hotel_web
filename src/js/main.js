@@ -78,6 +78,25 @@ const autoSlider = () => {
 
 autoSlider();
 
+const imgTargets = document.querySelectorAll('img[data-src]');
+
+const loadImg = function(entries, observer){
+    const [entry] = entries;
+    console.log(entry);
+    if(!entry.isIntersection) return;
+    entry.target.src = entry.target.dataset.src;
+    entry.target.addEventListener('load', function(){
+        entry.target.classList.remove('lazy-img');
+    });
+};
+
+const imgObserver = new IntersectionObserver(loadImg, {
+    root: null,
+    threshold: 0,
+});
+
+imgTargets.forEach(img => imgObserver.observe(img));
+
 /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
         if(i === index) Image.style.display = 'block';
