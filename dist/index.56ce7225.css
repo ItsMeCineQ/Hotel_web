@@ -173,7 +173,7 @@ header {
   box-shadow: 0 0 5px #000;
 }
 
-.lazy-img {
+.image .lazy-img {
   filter: blur(20px);
 }
 

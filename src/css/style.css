@@ -176,7 +176,7 @@ header{
     border-radius: 5px;
 }
 
-.lazy-img{
+.image .lazy-img{
     filter: blur(20px);
 }
 
