@@ -23,10 +23,11 @@ const btnArrowRight = document.querySelector('.button--arrow-right');
 let curSlide = 0;
 let interval;
 
-L.map('map', {
-    center: [51, 20],
-    zoom: 13
-});
+const map = L.map('map').setView([51.505, -0.09], 13);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
