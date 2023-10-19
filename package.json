@@ -8,5 +8,8 @@
     "build": "parcel build index.html"
   },
   "author": "Marcin Luty",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  }
 }

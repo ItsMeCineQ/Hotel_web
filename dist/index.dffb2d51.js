@@ -4,6 +4,7 @@ const sectionHome = document.querySelector("#home");
 const sectionSlider = document.querySelector(".slider--container");
 const sliderImages = document.querySelectorAll(".slider--image");
 const sectionBook = document.querySelector("#book");
+const sectionMap = document.querySelector(".map--container");
 const sectionAboutUs = document.querySelector("#about_us");
 const sectionReviews = document.querySelector("#reviews");
 const sectionContact = document.querySelector("#contact");
@@ -18,6 +19,13 @@ const btnArrowLeft = document.querySelector(".button--arrow-left");
 const btnArrowRight = document.querySelector(".button--arrow-right");
 let curSlide = 0;
 let interval;
+L.map("map", {
+    center: [
+        51,
+        20
+    ],
+    zoom: 13
+});
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
