@@ -1,5 +1,12 @@
 'use strict'
 
+import { OldTown } from "./objects";
+import { Cracow } from "./objects";
+import { Wawel } from "./objects";
+import { Station } from "./objects";
+
+console.log(OldTown);
+
 const header = document.querySelector('.header');
 const sectionHome = document.querySelector('#home');
 const sectionSlider = document.querySelector('.slider--container');

@@ -2,7 +2,7 @@
 // Fill them with data
 // Make unique pricing for each hotel
 
-const OldTown = {
+export const OldTown = {
     name: 'Old Town Hotel',
     address: {
         city: 'Kraków',
@@ -25,7 +25,7 @@ const OldTown = {
     }
 };
 
-const Cracow = {
+export const Cracow = {
     name: 'Cracow Hotel',
     address: {
         city: 'Kraków',
@@ -46,7 +46,7 @@ const Cracow = {
     },
 };
 
-const Wawel = {
+export const Wawel = {
     name: 'Wawel Hotel',
     address: {
         city: 'Kraków',
@@ -65,7 +65,7 @@ const Wawel = {
     },
 };
 
-const Station = {
+export const Station = {
     name: 'Main Station Hotel',
     address: {
         city: 'Kraków',
