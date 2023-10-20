@@ -22,8 +22,10 @@ const btnArrowRight = document.querySelector('.button--arrow-right');
 
 let curSlide = 0;
 let interval;
+const coords = [50.0611786, 19.9373964];
+const zoom = 15;
 
-const map = L.map('map').setView([51.505, -0.09], 13);
+const map = L.map('map').setView(coords, zoom);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
