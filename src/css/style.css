@@ -423,6 +423,15 @@ footer{
     transform: translateY(150px);
 }
 
+.leaflet-popup .leaflet-popup-content-wrapper{
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    width: 250px;
+}
+
+.leaflet-popup .leaflet-popup-tip{
+    background-color: var(--color-dark);
+}
 
 /* ANIMATIONS */
 

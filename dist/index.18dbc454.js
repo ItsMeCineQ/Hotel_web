@@ -625,7 +625,19 @@ const renderMap = function() {
 const renderMarker = function() {
     hotels.forEach((hotel)=>{
         L.marker(hotel.address.localization).addTo(map).bindPopup(`
-                ${hotel.name}
+                <img src="${hotel.image}"></img>
+                <span>${hotel.name}</span>
+                <div class="hotel--details">
+                    <div class="hotel--address">
+                        <span>${hotel.address.city}, ${hotel.address.street} ${hotel.address.number}</span>
+                    </div>
+                    <div class="hotel--price">
+                        <span>Average Price: ${hotel.avgPrice}</span>
+                    </div>
+                    <div class="hotel--review">
+                        ${hotel.review}/5⭐
+                    </div>
+                </div>
             `).openPopup();
     });
 };
@@ -737,6 +749,7 @@ const OldTown = {
     address: {
         city: "Krak\xf3w",
         street: "Świętego Tomasza",
+        number: 21,
         localization: [
             50.0636644,
             19.9367054
@@ -771,13 +784,15 @@ const OldTown = {
         if (duration >= 3 && duration <= 7) price;
         if (duration >= 8) price;
     },
-    review: 4.6
+    review: 4.6,
+    image: "./img/slider_hotel.jpg"
 };
 const Cracow = {
     name: "Cracow Hotel",
     address: {
         city: "Krak\xf3w",
         street: "J\xf3zefa Starego",
+        number: 59,
         localization: [
             50.0569229,
             19.9410478
@@ -811,13 +826,15 @@ const Cracow = {
         superior: 450,
         deluxe: 500
     },
-    review: 4.7
+    review: 4.7,
+    image: "./img/slider_hotel.jpg"
 };
 const Wawel = {
     name: "Wawel Hotel",
     address: {
         city: "Krak\xf3w",
         street: "Podzamcze",
+        number: 33,
         localization: [
             50.0557622,
             19.9333749
@@ -845,13 +862,15 @@ const Wawel = {
         superior: 400,
         deluxe: 460
     },
-    review: 4.8
+    review: 4.8,
+    image: "./img/slider_hotel.jpg"
 };
 const Station = {
     name: "Main Station Hotel",
     address: {
         city: "Krak\xf3w",
         street: "Lubicz",
+        number: 64,
         localization: [
             50.0647482,
             19.9471013
@@ -879,7 +898,8 @@ const Station = {
         standard: 250,
         premium: 300
     },
-    review: 4.2
+    review: 4.2,
+    image: "./img/slider_hotel.jpg"
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"fd8tj":[function(require,module,exports) {

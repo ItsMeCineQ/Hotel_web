@@ -29,9 +29,7 @@ let curSlide = 0;
 let interval;
 const coords = [50.0611786, 19.9373964];
 const zoom = 15;
-
 const map = L.map('map').setView(coords, zoom);
-
 const hotels = [OldTown, Cracow, Wawel, Station];
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
@@ -52,7 +50,19 @@ const renderMarker = function(){
     hotels.forEach(hotel => {
         L.marker(hotel.address.localization).addTo(map)
             .bindPopup(`
-                ${hotel.name}
+                <img src="${hotel.image}"></img>
+                <span>${hotel.name}</span>
+                <div class="hotel--details">
+                    <div class="hotel--address">
+                        <span>${hotel.address.city}, ${hotel.address.street} ${hotel.address.number}</span>
+                    </div>
+                    <div class="hotel--price">
+                        <span>Average Price: ${hotel.avgPrice}</span>
+                    </div>
+                    <div class="hotel--review">
+                        ${hotel.review}/5⭐
+                    </div>
+                </div>
             `)
             .openPopup();
     });

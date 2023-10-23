@@ -7,6 +7,7 @@ export const OldTown = {
     address: {
         city: 'Kraków',
         street: 'Świętego Tomasza',
+        number: 21,
         localization: [50.0636644, 19.9367054],
     },
     rooms: {
@@ -24,6 +25,7 @@ export const OldTown = {
         if(duration >= 8) price * 0.85;
     },
     review: 4.6,
+    image: './img/slider_hotel.jpg',
 };
 
 export const Cracow = {
@@ -31,6 +33,7 @@ export const Cracow = {
     address: {
         city: 'Kraków',
         street: 'Józefa Starego',
+        number: 59,
         localization: [50.0569229, 19.9410478],
     },
     rooms: {
@@ -46,6 +49,7 @@ export const Cracow = {
         deluxe: 500,
     },
     review: 4.7,
+    image: './img/slider_hotel.jpg',
 };
 
 export const Wawel = {
@@ -53,6 +57,7 @@ export const Wawel = {
     address: {
         city: 'Kraków',
         street: 'Podzamcze',
+        number: 33,
         localization: [50.0557622, 19.9333749],
     },
     rooms: {
@@ -66,6 +71,7 @@ export const Wawel = {
         deluxe: 460,
     },
     review: 4.8,
+    image: './img/slider_hotel.jpg',
 };
 
 export const Station = {
@@ -73,6 +79,7 @@ export const Station = {
     address: {
         city: 'Kraków',
         street: 'Lubicz',
+        number: 64,
         localization: [50.0647482, 19.9471013],
     },
     rooms: {
@@ -84,4 +91,5 @@ export const Station = {
         premium: 300,
     },
     review: 4.2,
+    image: './img/slider_hotel.jpg',
 };
