@@ -5,8 +5,6 @@ import { Cracow } from "./objects";
 import { Wawel } from "./objects";
 import { Station } from "./objects";
 
-console.log(OldTown);
-
 const header = document.querySelector('.header');
 const sectionHome = document.querySelector('#home');
 const sectionSlider = document.querySelector('.slider--container');
@@ -34,9 +32,6 @@ const zoom = 15;
 
 const map = L.map('map').setView(coords, zoom);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
@@ -45,6 +40,35 @@ document.querySelector('.nav--links').addEventListener('click', function(e){
         document.querySelector(id).scrollIntoView({behavior: 'smooth'});
     }
 });
+
+const renderMap = function(){
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+};
+
+const renderMarker = function(){
+    L.marker(OldTown.address.localization).addTo(map)
+        .bindPopup('Old Town Hotel')
+        .openPopup();
+    
+    L.marker(Cracow.address.localization).addTo(map)
+        .bindPopup('Cracow Hotel')
+        .openPopup();
+    
+    L.marker(Wawel.address.localization).addTo(map)
+        .bindPopup('Wawel Hotel')
+        .openPopup();
+    
+    L.marker(Station.address.localization).addTo(map)
+        .bindPopup('Station Hotel')
+        .openPopup();
+};
+
+const App = function(){
+    renderMap();
+    renderMarker();
+}
 
 btnReviews.addEventListener('click', function(){
     sectionReviews.classList.toggle('reviews--expand');
@@ -156,3 +180,5 @@ allSections.forEach(function(section){
     sectionObserver.observe(section);
     section.classList.add('section--hidden');
 }); */
+
+App();

@@ -7,7 +7,7 @@ export const OldTown = {
     address: {
         city: 'Kraków',
         street: 'Świętego Tomasza',
-        localization: '',
+        localization: [50.0636644, 19.9367054],
     },
     rooms: {
         standard: [1, 2, 3, 4],
@@ -30,7 +30,7 @@ export const Cracow = {
     address: {
         city: 'Kraków',
         street: 'Józefa Starego',
-        localization: '',
+        localization: [50.0569229, 19.9410478],
     },
     rooms: {
         standard: [101, 102, 103],
@@ -50,8 +50,8 @@ export const Wawel = {
     name: 'Wawel Hotel',
     address: {
         city: 'Kraków',
-        street: 'Wawel',
-        localization: '',
+        street: 'Podzamcze',
+        localization: [50.0557622, 19.9333749],
     },
     rooms: {
         premium: [1.1, 1.2, 1.3],
@@ -70,7 +70,7 @@ export const Station = {
     address: {
         city: 'Kraków',
         street: 'Lubicz',
-        localization: '',
+        localization: [50.0647482, 19.9471013],
     },
     rooms: {
         standard: [1, 2, 3, 4, 5, 6],

@@ -576,7 +576,6 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"1SICI":[function(require,module,exports) {
 var _objects = require("./objects");
 "use strict";
-console.log((0, _objects.OldTown));
 const header = document.querySelector(".header");
 const sectionHome = document.querySelector("#home");
 const sectionSlider = document.querySelector(".slider--container");
@@ -603,9 +602,6 @@ const coords = [
 ];
 const zoom = 15;
 const map = L.map("map").setView(coords, zoom);
-L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -615,6 +611,21 @@ document.querySelector(".nav--links").addEventListener("click", function(e) {
         });
     }
 });
+const renderMap = function() {
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+};
+const renderMarker = function() {
+    L.marker((0, _objects.OldTown).address.localization).addTo(map).bindPopup("Old Town Hotel").openPopup();
+    L.marker((0, _objects.Cracow).address.localization).addTo(map).bindPopup("Cracow Hotel").openPopup();
+    L.marker((0, _objects.Wawel).address.localization).addTo(map).bindPopup("Wawel Hotel").openPopup();
+    L.marker((0, _objects.Station).address.localization).addTo(map).bindPopup("Station Hotel").openPopup();
+};
+const App = function() {
+    renderMap();
+    renderMarker();
+};
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
     btnReviews.classList.toggle("button--reviews-expand");
@@ -669,13 +680,14 @@ const imgObserver = new IntersectionObserver(loadImg, {
     threshold: 0,
     rootMargin: "200px"
 });
-imgTargets.forEach((img)=>imgObserver.observe(img)); /* const showImage = function(index){
+imgTargets.forEach((img)=>imgObserver.observe(img));
+/* const showImage = function(index){
     sliderImages.forEach((img, i) => {
         if(i === index) Image.style.display = 'block';
         else Image.style.display = 'none';
     });
 };
- */  /* const stickyNav = function(entries){
+ */ /* const stickyNav = function(entries){
     const [entry] = entries;
     if(!entry.isIntersecting) header.classList.add('sticky');
     else header.classList.remove('sticky');
@@ -687,7 +699,7 @@ const headerObserver = new IntersectionObserver(stickyNav, {
     threshold: 0,
 });
 
-headerObserver.observe(header); */  /* const revealSection = function(entries, observer){
+headerObserver.observe(header); */ /* const revealSection = function(entries, observer){
     const [entry] = entries;
     if(!entry.isIntersecting) return;
     entry.target.classList.remove('section--hidden');
@@ -701,7 +713,7 @@ const sectionObserver = new IntersectionObserver(revealSection,{
 allSections.forEach(function(section){
     sectionObserver.observe(section);
     section.classList.add('section--hidden');
-}); */ 
+}); */ App();
 
 },{"./objects":"kXREq"}],"kXREq":[function(require,module,exports) {
 // Make hotel objects
@@ -718,7 +730,10 @@ const OldTown = {
     address: {
         city: "Krak\xf3w",
         street: "Świętego Tomasza",
-        localization: ""
+        localization: [
+            50.0636644,
+            19.9367054
+        ]
     },
     rooms: {
         standard: [
@@ -755,7 +770,10 @@ const Cracow = {
     address: {
         city: "Krak\xf3w",
         street: "J\xf3zefa Starego",
-        localization: ""
+        localization: [
+            50.0569229,
+            19.9410478
+        ]
     },
     rooms: {
         standard: [
@@ -790,8 +808,11 @@ const Wawel = {
     name: "Wawel Hotel",
     address: {
         city: "Krak\xf3w",
-        street: "Wawel",
-        localization: ""
+        street: "Podzamcze",
+        localization: [
+            50.0557622,
+            19.9333749
+        ]
     },
     rooms: {
         premium: [
@@ -821,7 +842,10 @@ const Station = {
     address: {
         city: "Krak\xf3w",
         street: "Lubicz",
-        localization: ""
+        localization: [
+            50.0647482,
+            19.9471013
+        ]
     },
     rooms: {
         standard: [
