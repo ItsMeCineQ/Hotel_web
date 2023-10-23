@@ -25,7 +25,7 @@ export const OldTown = {
         if(duration >= 8) price * 0.85;
     },
     review: 4.6,
-    image: './img/slider_hotel.jpg',
+    image: 'https://pix8.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768',
 };
 
 export const Cracow = {
@@ -49,7 +49,7 @@ export const Cracow = {
         deluxe: 500,
     },
     review: 4.7,
-    image: './img/slider_hotel.jpg',
+    image: '../src/img/slider_hotel.jpg',
 };
 
 export const Wawel = {
@@ -71,7 +71,7 @@ export const Wawel = {
         deluxe: 460,
     },
     review: 4.8,
-    image: './img/slider_hotel.jpg',
+    image: '../src/img/slider_hotel.jpg',
 };
 
 export const Station = {
@@ -91,5 +91,5 @@ export const Station = {
         premium: 300,
     },
     review: 4.2,
-    image: './img/slider_hotel.jpg',
+    image: '../src/img/slider_hotel.jpg',
 };

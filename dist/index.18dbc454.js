@@ -630,7 +630,7 @@ const avgPrice = function(hotel) {
 const renderMarker = function() {
     hotels.forEach((hotel)=>{
         L.marker(hotel.address.localization).addTo(map).bindPopup(`
-                <img src="${hotel.image}"></img>
+                <img src="${hotel.image}">
                 <span>${hotel.name}</span>
                 <div class="hotel--details">
                     <div class="hotel--address">
@@ -695,6 +695,7 @@ const loadImg = function(entries, observer) {
     // Replace src with data-src
     entry.target.src = entry.target.dataset.src;
     entry.target.addEventListener("load", function() {
+        console.log("loaded");
         entry.target.classList.remove("lazy-img");
     });
     observer.unobserve(entry.target);
@@ -790,7 +791,7 @@ const OldTown = {
         if (duration >= 8) price;
     },
     review: 4.6,
-    image: "./img/slider_hotel.jpg"
+    image: "https://pix8.agoda.net/hotelImages/124/1246280/1246280_16061017110043391702.jpg?ca=6&ce=1&s=1024x768"
 };
 const Cracow = {
     name: "Cracow Hotel",
@@ -832,7 +833,7 @@ const Cracow = {
         deluxe: 500
     },
     review: 4.7,
-    image: "./img/slider_hotel.jpg"
+    image: "../src/img/slider_hotel.jpg"
 };
 const Wawel = {
     name: "Wawel Hotel",
@@ -868,7 +869,7 @@ const Wawel = {
         deluxe: 460
     },
     review: 4.8,
-    image: "./img/slider_hotel.jpg"
+    image: "../src/img/slider_hotel.jpg"
 };
 const Station = {
     name: "Main Station Hotel",
@@ -904,7 +905,7 @@ const Station = {
         premium: 300
     },
     review: 4.2,
-    image: "./img/slider_hotel.jpg"
+    image: "../src/img/slider_hotel.jpg"
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"fd8tj":[function(require,module,exports) {

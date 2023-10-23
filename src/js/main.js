@@ -56,7 +56,7 @@ const renderMarker = function(){
     hotels.forEach(hotel => {
         L.marker(hotel.address.localization).addTo(map)
             .bindPopup(`
-                <img src="${hotel.image}"></img>
+                <img src="${hotel.image}">
                 <span>${hotel.name}</span>
                 <div class="hotel--details">
                     <div class="hotel--address">
@@ -138,8 +138,9 @@ const loadImg = function (entries, observer) {
   entry.target.src = entry.target.dataset.src;
 
   entry.target.addEventListener('load', function () {
+    console.log('loaded');
     entry.target.classList.remove('lazy-img');
-  });
+  }); 
 
   observer.unobserve(entry.target);
 };
