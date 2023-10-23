@@ -32,6 +32,7 @@ const zoom = 15;
 
 const map = L.map('map').setView(coords, zoom);
 
+const hotels = [OldTown, Cracow, Wawel, Station];
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
@@ -48,21 +49,13 @@ const renderMap = function(){
 };
 
 const renderMarker = function(){
-    L.marker(OldTown.address.localization).addTo(map)
-        .bindPopup('Old Town Hotel')
-        .openPopup();
-    
-    L.marker(Cracow.address.localization).addTo(map)
-        .bindPopup('Cracow Hotel')
-        .openPopup();
-    
-    L.marker(Wawel.address.localization).addTo(map)
-        .bindPopup('Wawel Hotel')
-        .openPopup();
-    
-    L.marker(Station.address.localization).addTo(map)
-        .bindPopup('Station Hotel')
-        .openPopup();
+    hotels.forEach(hotel => {
+        L.marker(hotel.address.localization).addTo(map)
+            .bindPopup(`
+                ${hotel.name}
+            `)
+            .openPopup();
+    });
 };
 
 const App = function(){

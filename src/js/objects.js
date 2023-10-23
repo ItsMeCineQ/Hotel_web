@@ -22,7 +22,8 @@ export const OldTown = {
     calcPrice: function(duration){
         if(duration >= 3 && duration <= 7) price * 0.9;
         if(duration >= 8) price * 0.85;
-    }
+    },
+    review: 4.6,
 };
 
 export const Cracow = {
@@ -44,6 +45,7 @@ export const Cracow = {
         superior: 450,
         deluxe: 500,
     },
+    review: 4.7,
 };
 
 export const Wawel = {
@@ -63,6 +65,7 @@ export const Wawel = {
         superior: 400,
         deluxe: 460,
     },
+    review: 4.8,
 };
 
 export const Station = {
@@ -80,4 +83,5 @@ export const Station = {
         standard: 250,
         premium: 300,
     },
+    review: 4.2,
 };

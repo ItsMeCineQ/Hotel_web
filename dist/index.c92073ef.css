@@ -147,8 +147,10 @@ header {
 }
 
 .map--container {
+  z-index: 1;
   border: 1px solid #000;
   height: 600px;
+  position: relative;
 }
 
 .about_us--container {

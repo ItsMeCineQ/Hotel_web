@@ -602,6 +602,12 @@ const coords = [
 ];
 const zoom = 15;
 const map = L.map("map").setView(coords, zoom);
+const hotels = [
+    (0, _objects.OldTown),
+    (0, _objects.Cracow),
+    (0, _objects.Wawel),
+    (0, _objects.Station)
+];
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -617,10 +623,11 @@ const renderMap = function() {
     }).addTo(map);
 };
 const renderMarker = function() {
-    L.marker((0, _objects.OldTown).address.localization).addTo(map).bindPopup("Old Town Hotel").openPopup();
-    L.marker((0, _objects.Cracow).address.localization).addTo(map).bindPopup("Cracow Hotel").openPopup();
-    L.marker((0, _objects.Wawel).address.localization).addTo(map).bindPopup("Wawel Hotel").openPopup();
-    L.marker((0, _objects.Station).address.localization).addTo(map).bindPopup("Station Hotel").openPopup();
+    hotels.forEach((hotel)=>{
+        L.marker(hotel.address.localization).addTo(map).bindPopup(`
+                ${hotel.name}
+            `).openPopup();
+    });
 };
 const App = function() {
     renderMap();
@@ -763,7 +770,8 @@ const OldTown = {
     calcPrice: function(duration) {
         if (duration >= 3 && duration <= 7) price;
         if (duration >= 8) price;
-    }
+    },
+    review: 4.6
 };
 const Cracow = {
     name: "Cracow Hotel",
@@ -802,7 +810,8 @@ const Cracow = {
         premium: 370,
         superior: 450,
         deluxe: 500
-    }
+    },
+    review: 4.7
 };
 const Wawel = {
     name: "Wawel Hotel",
@@ -835,7 +844,8 @@ const Wawel = {
         premium: 350,
         superior: 400,
         deluxe: 460
-    }
+    },
+    review: 4.8
 };
 const Station = {
     name: "Main Station Hotel",
@@ -868,7 +878,8 @@ const Station = {
     price: {
         standard: 250,
         premium: 300
-    }
+    },
+    review: 4.2
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"fd8tj":[function(require,module,exports) {
