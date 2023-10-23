@@ -622,6 +622,16 @@ const renderMap = function() {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 };
+const avgPrice = function() {
+    hotels.map((hotel)=>{
+        let sum;
+        const prices = Object.values(hotel.price);
+        const averagePrices = Math.floor(prices.reduce((acc, price)=>acc + price, 0) / prices.length);
+        console.log(averagePrices);
+    });
+// prices.map((price)=>console.log(price));
+};
+avgPrice();
 const renderMarker = function() {
     hotels.forEach((hotel)=>{
         L.marker(hotel.address.localization).addTo(map).bindPopup(`
@@ -632,7 +642,7 @@ const renderMarker = function() {
                         <span>${hotel.address.city}, ${hotel.address.street} ${hotel.address.number}</span>
                     </div>
                     <div class="hotel--price">
-                        <span>Average Price: ${hotel.avgPrice}</span>
+                        <span>Average Price: </span>
                     </div>
                     <div class="hotel--review">
                         ${hotel.review}/5⭐
