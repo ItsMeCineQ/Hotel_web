@@ -154,6 +154,7 @@ header{
     z-index: 1;
     position: relative;
 }
+
 /* 
 .hotel--details{
     position: absolute;
@@ -427,6 +428,12 @@ footer{
     background-color: var(--color-dark);
     color: var(--color-light);
     width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper img{
+    width: 70px;
 }
 
 .leaflet-popup .leaflet-popup-tip{

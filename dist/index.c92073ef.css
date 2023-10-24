@@ -399,7 +399,13 @@ footer {
 .leaflet-popup .leaflet-popup-content-wrapper {
   background-color: var(--color-dark);
   color: var(--color-light);
+  justify-content: center;
   width: 250px;
+  display: flex;
+}
+
+.leaflet-popup .leaflet-popup-content-wrapper img {
+  width: 70px;
 }
 
 .leaflet-popup .leaflet-popup-tip {

@@ -63,7 +63,7 @@ const renderMarker = function(){
                         <span>${hotel.address.city}, ${hotel.address.street} ${hotel.address.number}</span>
                     </div>
                     <div class="hotel--price">
-                        <span>Average Price: ${avgPrice(hotel)}</span>
+                        <span>Average Price: ${avgPrice(hotel)} zł</span>
                     </div>
                     <div class="hotel--review">
                         ${hotel.review}/5⭐
@@ -138,7 +138,6 @@ const loadImg = function (entries, observer) {
   entry.target.src = entry.target.dataset.src;
 
   entry.target.addEventListener('load', function () {
-    console.log('loaded');
     entry.target.classList.remove('lazy-img');
   }); 
 
