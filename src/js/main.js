@@ -56,8 +56,10 @@ const renderMarker = function(){
     hotels.forEach(hotel => {
         L.marker(hotel.address.localization).addTo(map)
             .bindPopup(`
-                <img src="${hotel.image}">
-                <span>${hotel.name}</span>
+                <div class="hotel--head">
+                    <img src="${hotel.image}">
+                    <span>${hotel.name}</span>
+                </div>
                 <div class="hotel--details">
                     <div class="hotel--address">
                         <span>${hotel.address.city}, ${hotel.address.street} ${hotel.address.number}</span>
