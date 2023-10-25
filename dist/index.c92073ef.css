@@ -150,6 +150,42 @@ header {
   padding: 5px;
 }
 
+.calendar {
+  background-color: var(--color-light);
+  color: var(--color-logo);
+  width: 250px;
+  padding: 10px;
+}
+
+.calendar ul {
+  grid-template-columns: 7fr 7fr 7fr 7fr 7fr 7fr 7fr;
+  gap: 5px;
+  list-style: none;
+  display: grid;
+}
+
+.current_year-month {
+  display: flex;
+}
+
+.btn--swipe {
+  background-color: #0000;
+  border: none;
+}
+
+.btn--swipe:hover {
+  cursor: pointer;
+}
+
+.arrow--left {
+  height: 20px;
+  transform: rotateY(180deg);
+}
+
+.arrow--right {
+  height: 20px;
+}
+
 .icon--search {
   width: 25px;
 }
@@ -217,7 +253,7 @@ header {
   font-size: 1.2rem;
 }
 
-.form--book button {
+.form--submit {
   background-color: #0000;
   border: none;
   border-radius: 25px;
@@ -225,7 +261,7 @@ header {
   height: 50px;
 }
 
-.form--book button:hover {
+.form--submit:hover {
   cursor: pointer;
   box-shadow: 0 0 5px var(--color-light);
 }

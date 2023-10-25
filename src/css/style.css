@@ -144,11 +144,49 @@ header{
     margin-top: 5rem;
 }
 
+/* *****************CALENDAR**************** */
+
 .choose--date{
     background-color: var(--color-light);
     color: var(--color-logo);
     padding: 5px;
     user-select: none;
+}
+
+.calendar{
+    background-color: var(--color-light);
+    color: var(--color-logo);
+    width: 250px;
+    padding: 10px;
+}
+
+.calendar ul{
+    display: grid;
+    grid-template-columns: 7fr 7fr 7fr 7fr 7fr 7fr 7fr;
+    list-style: none;
+    gap: 5px;
+}
+
+.current_year-month{
+    display: flex;
+}
+
+.btn--swipe{
+    background-color: transparent;
+    border: none;
+}
+
+.btn--swipe:hover{
+    cursor: pointer;
+}
+
+.arrow--left{
+    height: 20px;
+    transform: rotateY(180deg);
+}
+
+.arrow--right{
+    height: 20px;
 }
 
 .icon--search{
@@ -235,7 +273,7 @@ header{
     margin-right: 1rem;
 }
 
-.form--book button{
+.form--submit{
     background-color: transparent;
     border: none;
     border-radius: 25px;
@@ -243,7 +281,7 @@ header{
     width: 60px;
 }
 
-.form--book button:hover{
+.form--submit:hover{
     cursor: pointer;
     box-shadow: 0 0 5px var(--color-light);
 }
