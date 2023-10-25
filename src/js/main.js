@@ -4,6 +4,7 @@ import { OldTown } from "./objects";
 import { Cracow } from "./objects";
 import { Wawel } from "./objects";
 import { Station } from "./objects";
+import { renderCalendar } from "./calendar";
 
 const header = document.querySelector('.header');
 const sectionHome = document.querySelector('#home');
@@ -79,6 +80,7 @@ const renderMarker = function(){
 const App = function(){
     renderMap();
     renderMarker();
+    renderCalendar();
 }
 
 btnReviews.addEventListener('click', function(){

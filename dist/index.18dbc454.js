@@ -575,6 +575,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"1SICI":[function(require,module,exports) {
 var _objects = require("./objects");
+var _calendar = require("./calendar");
 "use strict";
 const header = document.querySelector(".header");
 const sectionHome = document.querySelector("#home");
@@ -651,6 +652,7 @@ const renderMarker = function() {
 const App = function() {
     renderMap();
     renderMarker();
+    (0, _calendar.renderCalendar)();
 };
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
@@ -741,7 +743,7 @@ allSections.forEach(function(section){
     section.classList.add('section--hidden');
 }); */ App();
 
-},{"./objects":"kXREq"}],"kXREq":[function(require,module,exports) {
+},{"./objects":"kXREq","./calendar":"fsVt9"}],"kXREq":[function(require,module,exports) {
 // Make hotel objects
 // Fill them with data
 // Make unique pricing for each hotel
@@ -940,6 +942,59 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")
+},{}],"fsVt9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "renderCalendar", ()=>renderCalendar);
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+const date = new Date();
+const currentYear = date.getFullYear();
+const currentMonth = date.getMonth();
+const currentDay = date.getDate();
+const dayName = [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+];
+const sectionCalendar = document.querySelector(".calendar");
+const renderCalendar = function() {
+    let html = `
+        <div class="current_year-month">
+            <h2>${months[currentMonth]}, ${currentYear}</h2>
+            <button class="btn--swipe swipe--left">
+                <img src="src/img/icon_arrow_black.png" class="arrow--left"/>
+            </button>
+            <button class="btn--swipe swipe--right">
+                <img src="src/img/icon_arrow_black.png" class="arrow--right"/>
+            </button>
+        </div>
+        <ul class="day--name">
+            ${dayName.forEach((day)=>`<li>${day}</li>`)}
+        </ul>
+        <ul class="day--date">
+            <li>1</li>
+        </ul>
+    `;
+    sectionCalendar.insertAdjacentHTML("beforeend", html);
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")
 
 //# sourceMappingURL=index.18dbc454.js.map
