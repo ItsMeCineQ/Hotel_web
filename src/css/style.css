@@ -165,6 +165,7 @@ header{
     grid-template-columns: 7fr 7fr 7fr 7fr 7fr 7fr 7fr;
     list-style: none;
     gap: 5px;
+    text-align: center;
 }
 
 .days_prev_next{

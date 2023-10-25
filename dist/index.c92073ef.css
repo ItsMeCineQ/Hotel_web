@@ -158,6 +158,7 @@ header {
 }
 
 .calendar ul {
+  text-align: center;
   grid-template-columns: 7fr 7fr 7fr 7fr 7fr 7fr 7fr;
   gap: 5px;
   list-style: none;

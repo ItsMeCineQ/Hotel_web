@@ -11,6 +11,7 @@ export const renderCalendar = function () {
     const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
     const lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
+    const lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
 
     console.log(lastDay);
     let html =  `
@@ -28,7 +29,8 @@ export const renderCalendar = function () {
         </ul>
         <ul class="day--date">
             ${Array.from({ length: firstDayOfMonth }, (_, i) => `<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
-            ${Array.from({length: lastDay}, (_, i) => `<li>${i + 1}</li>`).join('')} 
+            ${Array.from({length: lastDay}, (_, i) => `<li>${i + 1}</li>`).join('')}
+            ${Array.from({length: lastDayOfMonth}, (_, i) => `<li class="days_prev_next">${i + 1}</li>`).join('')}
         </ul>
     `
     sectionCalendar.insertAdjacentHTML('beforeend', html);
