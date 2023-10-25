@@ -144,6 +144,13 @@ header{
     margin-top: 5rem;
 }
 
+.choose--date{
+    background-color: var(--color-light);
+    color: var(--color-logo);
+    padding: 5px;
+    user-select: none;
+}
+
 .icon--search{
     width: 25px;
 }
