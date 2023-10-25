@@ -8,6 +8,9 @@ const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const sectionCalendar = document.querySelector('.calendar');
 
 export const renderCalendar = function () {
+    const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    
+    console.log(lastDay);
     let html =  `
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
@@ -19,10 +22,10 @@ export const renderCalendar = function () {
             </button>
         </div>
         <ul class="day--name">
-            ${dayName.forEach(day => `<li>${day}</li>`)}
+            ${dayName.map(day => `<li>${day}</li>`).join('')}
         </ul>
         <ul class="day--date">
-            <li>1</li>
+            ${Array.from({ length: lastDay }, (_, i) => `<li>${i + 1}</li>`).join('')}
         </ul>
     `
     sectionCalendar.insertAdjacentHTML('beforeend', html);
