@@ -167,6 +167,10 @@ header{
     gap: 5px;
 }
 
+.days_prev_next{
+    color: var(--color-highlight);
+}
+
 .current_year-month{
     display: flex;
 }

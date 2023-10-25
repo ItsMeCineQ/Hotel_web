@@ -975,7 +975,9 @@ const dayName = [
 ];
 const sectionCalendar = document.querySelector(".calendar");
 const renderCalendar = function() {
+    const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
     const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
     console.log(lastDay);
     let html = `
         <div class="current_year-month">
@@ -992,8 +994,11 @@ const renderCalendar = function() {
         </ul>
         <ul class="day--date">
             ${Array.from({
+        length: firstDayOfMonth
+    }, (_, i)=>`<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join("")}
+            ${Array.from({
         length: lastDay
-    }, (_, i)=>`<li>${i + 1}</li>`).join("")}
+    }, (_, i)=>`<li>${i + 1}</li>`).join("")} 
         </ul>
     `;
     sectionCalendar.insertAdjacentHTML("beforeend", html);
