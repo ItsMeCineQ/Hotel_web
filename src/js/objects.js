@@ -1,6 +1,9 @@
-// Make hotel objects
-// Fill them with data
-// Make unique pricing for each hotel
+import hotel from '../img/hotel.jpg'
+import hotel2 from '../img/about_us_img-1.jpeg'
+import hotel3 from '../img/about_us_img-2.jpg'
+import hotel4 from '../img/slider_hotel5.jpeg'
+
+
 const img1 = document.querySelector('.slider--image');
 
 export const OldTown = {
@@ -26,7 +29,7 @@ export const OldTown = {
         if(duration >= 8) price * 0.85;
     },
     review: 4.6,
-    image: 'https://cf.bstatic.com/xdata/images/hotel/max300/426620474.jpg?k=25c851feb27a3b08866563cfe680f1d81403426caf4c15715f6989d111f422b5&o=',
+    image: hotel,
 };
 
 export const Cracow = {
@@ -50,7 +53,7 @@ export const Cracow = {
         deluxe: 500,
     },
     review: 4.7,
-    image: 'https://www.kayak.pl/rimg/himg/44/fe/90/leonardo-61545-147068318-531165.jpg?width=1366&height=768&crop=true',
+    image: hotel2,
 };
 
 export const Wawel = {
@@ -72,7 +75,7 @@ export const Wawel = {
         deluxe: 460,
     },
     review: 4.8,
-    image: 'https://dynl.mktgcdn.com/p/joMhXYt9SXQ1szz1GFDO2pPEaSpYSaPQc0KRKmxZZYk/600x450.jpg',
+    image: hotel3,
 };
 
 export const Station = {
@@ -92,5 +95,5 @@ export const Station = {
         premium: 300,
     },
     review: 4.2,
-    image: 'https://u.profitroom.pl/2020-arkonpark-dobryhotel-com/thumb/1920x1080/uploads/APG_Fasada_2_duzy_1.jpg',
+    image: hotel4,
 };

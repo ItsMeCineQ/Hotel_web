@@ -1,3 +1,5 @@
+import icon_arrow from '../img/icon_arrow3.png'
+
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 
 'July', 'August', 'September', 'October', 'November', 'December'];
 const date = new Date();
@@ -30,10 +32,10 @@ export const renderCalendar = function () {
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
             <button class="btn--swipe swipe--left">
-                <img src="src/img/icon_arrow_black.png" class="arrow--left"/>
+                <img src="${icon_arrow}" class="arrow--left"/>
             </button>
             <button class="btn--swipe swipe--right">
-                <img src="src/img/icon_arrow_black.png" class="arrow--right"/>
+                <img src="${icon_arrow}" class="arrow--right"/>
             </button>
         </div>
         <ul class="day--name">

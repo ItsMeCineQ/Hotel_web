@@ -744,15 +744,20 @@ allSections.forEach(function(section){
 }); */ App();
 
 },{"./objects":"kXREq","./calendar":"fsVt9"}],"kXREq":[function(require,module,exports) {
-// Make hotel objects
-// Fill them with data
-// Make unique pricing for each hotel
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "OldTown", ()=>OldTown);
 parcelHelpers.export(exports, "Cracow", ()=>Cracow);
 parcelHelpers.export(exports, "Wawel", ()=>Wawel);
 parcelHelpers.export(exports, "Station", ()=>Station);
+var _hotelJpg = require("../img/hotel.jpg");
+var _hotelJpgDefault = parcelHelpers.interopDefault(_hotelJpg);
+var _aboutUsImg1Jpeg = require("../img/about_us_img-1.jpeg");
+var _aboutUsImg1JpegDefault = parcelHelpers.interopDefault(_aboutUsImg1Jpeg);
+var _aboutUsImg2Jpg = require("../img/about_us_img-2.jpg");
+var _aboutUsImg2JpgDefault = parcelHelpers.interopDefault(_aboutUsImg2Jpg);
+var _sliderHotel5Jpeg = require("../img/slider_hotel5.jpeg");
+var _sliderHotel5JpegDefault = parcelHelpers.interopDefault(_sliderHotel5Jpeg);
 const img1 = document.querySelector(".slider--image");
 const OldTown = {
     name: "Old Town Hotel",
@@ -795,7 +800,7 @@ const OldTown = {
         if (duration >= 8) price;
     },
     review: 4.6,
-    image: "https://cf.bstatic.com/xdata/images/hotel/max300/426620474.jpg?k=25c851feb27a3b08866563cfe680f1d81403426caf4c15715f6989d111f422b5&o="
+    image: (0, _hotelJpgDefault.default)
 };
 const Cracow = {
     name: "Cracow Hotel",
@@ -837,7 +842,7 @@ const Cracow = {
         deluxe: 500
     },
     review: 4.7,
-    image: "https://www.kayak.pl/rimg/himg/44/fe/90/leonardo-61545-147068318-531165.jpg?width=1366&height=768&crop=true"
+    image: (0, _aboutUsImg1JpegDefault.default)
 };
 const Wawel = {
     name: "Wawel Hotel",
@@ -873,7 +878,7 @@ const Wawel = {
         deluxe: 460
     },
     review: 4.8,
-    image: "https://dynl.mktgcdn.com/p/joMhXYt9SXQ1szz1GFDO2pPEaSpYSaPQc0KRKmxZZYk/600x450.jpg"
+    image: (0, _aboutUsImg2JpgDefault.default)
 };
 const Station = {
     name: "Main Station Hotel",
@@ -909,10 +914,10 @@ const Station = {
         premium: 300
     },
     review: 4.2,
-    image: "https://u.profitroom.pl/2020-arkonpark-dobryhotel-com/thumb/1920x1080/uploads/APG_Fasada_2_duzy_1.jpg"
+    image: (0, _sliderHotel5JpegDefault.default)
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"fd8tj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/hotel.jpg":"aVDsL","../img/about_us_img-2.jpg":"40D1P","../img/slider_hotel5.jpeg":"d2gvd","../img/about_us_img-1.jpeg":"kR8qk"}],"fd8tj":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -942,10 +947,59 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"fsVt9":[function(require,module,exports) {
+},{}],"aVDsL":[function(require,module,exports) {
+module.exports = require("7280487b4b1a6fd0").getBundleURL("10Mjw") + "hotel.30a8f604.jpg" + "?" + Date.now();
+
+},{"7280487b4b1a6fd0":"c2l7x"}],"c2l7x":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"40D1P":[function(require,module,exports) {
+module.exports = require("2875950eff7e13fc").getBundleURL("10Mjw") + "about_us_img-2.1596fbe9.jpg" + "?" + Date.now();
+
+},{"2875950eff7e13fc":"c2l7x"}],"d2gvd":[function(require,module,exports) {
+module.exports = require("c7b1d049fe31ded9").getBundleURL("10Mjw") + "slider_hotel5.793212d4.jpeg" + "?" + Date.now();
+
+},{"c7b1d049fe31ded9":"c2l7x"}],"kR8qk":[function(require,module,exports) {
+module.exports = require("cac9f1ff38f1f4f3").getBundleURL("10Mjw") + "about_us_img-1.85263eb2.jpeg" + "?" + Date.now();
+
+},{"cac9f1ff38f1f4f3":"c2l7x"}],"fsVt9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderCalendar", ()=>renderCalendar);
+var _iconArrow3Png = require("../img/icon_arrow3.png");
+var _iconArrow3PngDefault = parcelHelpers.interopDefault(_iconArrow3Png);
 const months = [
     "January",
     "February",
@@ -1001,10 +1055,10 @@ const renderCalendar = function() {
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
             <button class="btn--swipe swipe--left">
-                <img src="src/img/icon_arrow_black.png" class="arrow--left"/>
+                <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--left"/>
             </button>
             <button class="btn--swipe swipe--right">
-                <img src="src/img/icon_arrow_black.png" class="arrow--right"/>
+                <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--right"/>
             </button>
         </div>
         <ul class="day--name">
@@ -1017,6 +1071,9 @@ const renderCalendar = function() {
     sectionCalendar.insertAdjacentHTML("beforeend", html);
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/icon_arrow3.png":"cQhxs"}],"cQhxs":[function(require,module,exports) {
+module.exports = require("ef3fec99a734f203").getBundleURL("10Mjw") + "icon_arrow3.ac2a1826.png" + "?" + Date.now();
+
+},{"ef3fec99a734f203":"c2l7x"}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")
 
 //# sourceMappingURL=index.18dbc454.js.map
