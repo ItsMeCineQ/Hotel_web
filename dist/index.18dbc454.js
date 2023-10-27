@@ -1017,7 +1017,7 @@ const months = [
     "December"
 ];
 const date = new Date();
-const currentYear = date.getFullYear();
+let currentYear = date.getFullYear();
 let currentMonth = date.getMonth();
 const currentDay = date.getDate();
 const dayName = [
@@ -1029,10 +1029,10 @@ const dayName = [
     "Sat",
     "Sun"
 ];
-const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
-const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
-const lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
-const lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+let firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
+let lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+let lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
+let lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
 const sectionCalendar = document.querySelector(".calendar");
 const chooseDate = document.querySelector(".choose--date");
 const calendar = document.querySelector(".calendar");
@@ -1061,6 +1061,10 @@ const renderDayTags = function() {
     `;
 };
 const renderCalendar = function() {
+    firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
+    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
+    lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
     let html = `
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
