@@ -1033,9 +1033,8 @@ let firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
 let lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 let lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
 let lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
-const sectionCalendar = document.querySelector(".calendar");
-const chooseDate = document.querySelector(".choose--date");
 const calendar = document.querySelector(".calendar");
+const chooseDate = document.querySelector(".choose--date");
 chooseDate.addEventListener("click", function() {
     calendar.classList.toggle("show");
 });
@@ -1084,17 +1083,21 @@ const renderCalendar = function() {
             ${renderDays()}
         </ul>
     `;
-    sectionCalendar.insertAdjacentHTML("beforeend", html);
+    calendar.insertAdjacentHTML("beforeend", html);
+    const addEventListeners = function() {
+        const btnPrevNext = document.querySelectorAll(".btn--swipe");
+        btnPrevNext.forEach((btn)=>{
+            btn.addEventListener("click", ()=>{
+                console.log(btn);
+                calendar.innerHTML = "";
+                currentMonth = btn.classList.contains("swipe--left") ? currentMonth - 1 : currentMonth + 1;
+                renderCalendar();
+            });
+        });
+    };
+    addEventListeners();
 };
 renderCalendar();
-const btnPrevNext = document.querySelectorAll(".btn--swipe");
-btnPrevNext.forEach((btn)=>{
-    btn.addEventListener("click", ()=>{
-        console.log(btn);
-        currentMonth = btn.classList.contains("swipe--left") ? currentMonth - 1 : currentMonth + 1;
-        renderCalendar();
-    });
-});
 
 },{"../img/icon_arrow3.png":"cQhxs","@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"cQhxs":[function(require,module,exports) {
 module.exports = require("ef3fec99a734f203").getBundleURL("10Mjw") + "icon_arrow3.ac2a1826.png" + "?" + Date.now();
