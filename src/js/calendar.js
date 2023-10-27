@@ -7,11 +7,25 @@ const currentYear = date.getFullYear()
 const currentMonth = date.getMonth();
 const currentDay = date.getDate();
 const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
-const sectionCalendar = document.querySelector('.calendar');
 const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
 const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 const lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
 const lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+
+const sectionCalendar = document.querySelector('.calendar');
+const chooseDate = document.querySelector('.choose--date');
+const calendar = document.querySelector('.calendar')
+
+chooseDate.addEventListener('click', function(){
+    calendar.classList.add('show');
+});
+
+window.onclick = function(event){
+    if(!event.target.matches('.calendar')){
+        if(calendar.classList.contains('show'))
+            calendar.classList.remove('show');
+    };
+};
 
 const renderDays = function(){
     return `

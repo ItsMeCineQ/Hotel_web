@@ -153,8 +153,16 @@ header {
 .calendar {
   background-color: var(--color-light);
   color: var(--color-logo);
+  z-index: 222;
   width: 250px;
   padding: 10px;
+  position: absolute;
+  top: 83px;
+  right: 67px;
+}
+
+.day--name {
+  margin-bottom: 6px;
 }
 
 .calendar ul {
@@ -165,12 +173,21 @@ header {
   display: grid;
 }
 
+.calendar .show {
+  display: block;
+}
+
 .days_prev_next {
   color: var(--color-highlight);
 }
 
 .current_year-month {
+  margin-bottom: 8px;
   display: flex;
+}
+
+.current_year-month h2 {
+  margin-right: 20px;
 }
 
 .btn--swipe {
@@ -245,6 +262,7 @@ header {
   margin-top: 3rem;
   padding: 1rem;
   display: flex;
+  position: relative;
 }
 
 .form--book label {

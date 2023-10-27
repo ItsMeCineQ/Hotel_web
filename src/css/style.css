@@ -158,6 +158,14 @@ header{
     color: var(--color-logo);
     width: 250px;
     padding: 10px;
+    position: absolute;
+    top: 83px;
+    right: 67px;
+    z-index: 222;
+}
+
+.day--name{
+    margin-bottom: 6px;
 }
 
 .calendar ul{
@@ -168,12 +176,21 @@ header{
     text-align: center;
 }
 
+.calendar .show{
+    display: block;
+}
+
 .days_prev_next{
     color: var(--color-highlight);
 }
 
 .current_year-month{
     display: flex;
+    margin-bottom: 8px;
+}
+
+.current_year-month h2{
+    margin-right: 20px;
 }
 
 .btn--swipe{
@@ -259,6 +276,7 @@ header{
     background-color: var(--color-logo);
     color: var(--color-light);
     padding: 1rem;
+    position: relative;
 }
 
 .form--book label{
@@ -474,6 +492,8 @@ footer{
     transform: translateY(150px);
 }
 
+/* *******************MAP MARKERS***************** */
+
 .leaflet-popup .leaflet-popup-content-wrapper{
     background-color: var(--color-dark);
     color: var(--color-light);
@@ -521,7 +541,7 @@ footer{
     background-color: var(--color-dark);
 }
 
-/* ANIMATIONS */
+/* **************ANIMATIONS*************** */
 
 @keyframes expandAnimation{
     0% {

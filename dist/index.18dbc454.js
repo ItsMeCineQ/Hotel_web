@@ -577,7 +577,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var _objects = require("./objects");
 var _calendar = require("./calendar");
 "use strict";
-const header = document.querySelector(".header");
+/* import hotel_img_1 from 'src/img/hotel.jpg'
+import hotel_img_2 from 'src/img/about_us_img-1.jpeg'
+import hotel_img_3 from 'src/img/about_us_img-2.jpg'
+import hotel_img_4 from 'src/img/hotel.jpg'
+import hotel_img_5 from 'src/img/hotel.jpg' */ const header = document.querySelector(".header");
 const sectionHome = document.querySelector("#home");
 const sectionSlider = document.querySelector(".slider--container");
 const sliderImages = document.querySelectorAll(".slider--image");
@@ -592,6 +596,7 @@ const bottomRevievs = document.querySelector(".reviews--bottom");
 const headerStickySections = document.querySelectorAll(".sticky--nav");
 const allSections = document.querySelectorAll(".section");
 const iconArrow = document.querySelector(".icon--arrow");
+const calendar = document.querySelector(".calendar");
 const btnReviews = document.querySelector(".button--reviews");
 const btnArrowLeft = document.querySelector(".button--arrow-left");
 const btnArrowRight = document.querySelector(".button--arrow-right");
@@ -917,7 +922,7 @@ const Station = {
     image: (0, _sliderHotel5JpegDefault.default)
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/hotel.jpg":"aVDsL","../img/about_us_img-2.jpg":"40D1P","../img/slider_hotel5.jpeg":"d2gvd","../img/about_us_img-1.jpeg":"kR8qk"}],"fd8tj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/hotel.jpg":"aVDsL","../img/about_us_img-1.jpeg":"kR8qk","../img/about_us_img-2.jpg":"40D1P","../img/slider_hotel5.jpeg":"d2gvd"}],"fd8tj":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -985,16 +990,16 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"40D1P":[function(require,module,exports) {
+},{}],"kR8qk":[function(require,module,exports) {
+module.exports = require("cac9f1ff38f1f4f3").getBundleURL("10Mjw") + "about_us_img-1.85263eb2.jpeg" + "?" + Date.now();
+
+},{"cac9f1ff38f1f4f3":"c2l7x"}],"40D1P":[function(require,module,exports) {
 module.exports = require("2875950eff7e13fc").getBundleURL("10Mjw") + "about_us_img-2.1596fbe9.jpg" + "?" + Date.now();
 
 },{"2875950eff7e13fc":"c2l7x"}],"d2gvd":[function(require,module,exports) {
 module.exports = require("c7b1d049fe31ded9").getBundleURL("10Mjw") + "slider_hotel5.793212d4.jpeg" + "?" + Date.now();
 
-},{"c7b1d049fe31ded9":"c2l7x"}],"kR8qk":[function(require,module,exports) {
-module.exports = require("cac9f1ff38f1f4f3").getBundleURL("10Mjw") + "about_us_img-1.85263eb2.jpeg" + "?" + Date.now();
-
-},{"cac9f1ff38f1f4f3":"c2l7x"}],"fsVt9":[function(require,module,exports) {
+},{"c7b1d049fe31ded9":"c2l7x"}],"fsVt9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderCalendar", ()=>renderCalendar);
@@ -1027,11 +1032,21 @@ const dayName = [
     "Sat",
     "Sun"
 ];
-const sectionCalendar = document.querySelector(".calendar");
 const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
 const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 const lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
 const lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+const sectionCalendar = document.querySelector(".calendar");
+const chooseDate = document.querySelector(".choose--date");
+const calendar = document.querySelector(".calendar");
+chooseDate.addEventListener("click", function() {
+    calendar.classList.add("show");
+});
+window.onclick = function(event) {
+    if (!event.target.matches(".calendar")) {
+        if (calendar.classList.contains("show")) calendar.classList.remove("show");
+    }
+};
 const renderDays = function() {
     return `
         ${Array.from({
@@ -1071,7 +1086,7 @@ const renderCalendar = function() {
     sectionCalendar.insertAdjacentHTML("beforeend", html);
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/icon_arrow3.png":"cQhxs"}],"cQhxs":[function(require,module,exports) {
+},{"../img/icon_arrow3.png":"cQhxs","@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"cQhxs":[function(require,module,exports) {
 module.exports = require("ef3fec99a734f203").getBundleURL("10Mjw") + "icon_arrow3.ac2a1826.png" + "?" + Date.now();
 
 },{"ef3fec99a734f203":"c2l7x"}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")

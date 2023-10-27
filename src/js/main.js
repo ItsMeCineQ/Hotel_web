@@ -6,6 +6,12 @@ import { Wawel } from "./objects";
 import { Station } from "./objects";
 import { renderCalendar } from "./calendar";
 
+/* import hotel_img_1 from 'src/img/hotel.jpg'
+import hotel_img_2 from 'src/img/about_us_img-1.jpeg'
+import hotel_img_3 from 'src/img/about_us_img-2.jpg'
+import hotel_img_4 from 'src/img/hotel.jpg'
+import hotel_img_5 from 'src/img/hotel.jpg' */
+
 const header = document.querySelector('.header');
 const sectionHome = document.querySelector('#home');
 const sectionSlider = document.querySelector('.slider--container');
@@ -21,6 +27,7 @@ const bottomRevievs = document.querySelector('.reviews--bottom');
 const headerStickySections = document.querySelectorAll('.sticky--nav');
 const allSections = document.querySelectorAll('.section');
 const iconArrow = document.querySelector('.icon--arrow');
+const calendar = document.querySelector('.calendar');
 
 const btnReviews = document.querySelector('.button--reviews');
 const btnArrowLeft = document.querySelector('.button--arrow-left');
