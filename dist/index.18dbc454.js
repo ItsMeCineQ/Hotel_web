@@ -1040,13 +1040,11 @@ const sectionCalendar = document.querySelector(".calendar");
 const chooseDate = document.querySelector(".choose--date");
 const calendar = document.querySelector(".calendar");
 chooseDate.addEventListener("click", function() {
-    calendar.classList.add("show");
+    calendar.classList.toggle("show");
 });
-window.onclick = function(event) {
-    if (!event.target.matches(".calendar")) {
-        if (calendar.classList.contains("show")) calendar.classList.remove("show");
-    }
-};
+document.addEventListener("click", function(event) {
+    if (!event.target.closest(".choose--date") && !event.target.closest(".calendar")) calendar.classList.remove("show");
+});
 const renderDays = function() {
     return `
         ${Array.from({

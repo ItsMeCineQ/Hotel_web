@@ -162,6 +162,7 @@ header{
     top: 83px;
     right: 67px;
     z-index: 222;
+    display: none;
 }
 
 .day--name{
@@ -176,7 +177,7 @@ header{
     text-align: center;
 }
 
-.calendar .show{
+.show{
     display: block;
 }
 
