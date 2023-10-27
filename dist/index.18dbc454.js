@@ -657,7 +657,6 @@ const renderMarker = function() {
 const App = function() {
     renderMap();
     renderMarker();
-    (0, _calendar.renderCalendar)();
 };
 btnReviews.addEventListener("click", function() {
     sectionReviews.classList.toggle("reviews--expand");
@@ -1001,8 +1000,6 @@ module.exports = require("c7b1d049fe31ded9").getBundleURL("10Mjw") + "slider_hot
 
 },{"c7b1d049fe31ded9":"c2l7x"}],"fsVt9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "renderCalendar", ()=>renderCalendar);
 var _iconArrow3Png = require("../img/icon_arrow3.png");
 var _iconArrow3PngDefault = parcelHelpers.interopDefault(_iconArrow3Png);
 const months = [
@@ -1021,7 +1018,7 @@ const months = [
 ];
 const date = new Date();
 const currentYear = date.getFullYear();
-const currentMonth = date.getMonth();
+let currentMonth = date.getMonth();
 const currentDay = date.getDate();
 const dayName = [
     "Mon",
@@ -1067,12 +1064,14 @@ const renderCalendar = function() {
     let html = `
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
-            <button class="btn--swipe swipe--left">
-                <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--left"/>
-            </button>
-            <button class="btn--swipe swipe--right">
-                <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--right"/>
-            </button>
+            <div class="buttons--swipe">
+                <button class="btn--swipe swipe--left">
+                    <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--left"/>
+                </button>
+                <button class="btn--swipe swipe--right">
+                    <img src="${(0, _iconArrow3PngDefault.default)}" class="arrow--right"/>
+                </button>
+            </div>
         </div>
         <ul class="day--name">
             ${renderDayTags()}
@@ -1083,6 +1082,15 @@ const renderCalendar = function() {
     `;
     sectionCalendar.insertAdjacentHTML("beforeend", html);
 };
+renderCalendar();
+const btnPrevNext = document.querySelectorAll(".btn--swipe");
+btnPrevNext.forEach((btn)=>{
+    btn.addEventListener("click", ()=>{
+        console.log(btn);
+        currentMonth = btn.classList.contains("swipe--left") ? currentMonth - 1 : currentMonth + 1;
+        renderCalendar();
+    });
+});
 
 },{"../img/icon_arrow3.png":"cQhxs","@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"cQhxs":[function(require,module,exports) {
 module.exports = require("ef3fec99a734f203").getBundleURL("10Mjw") + "icon_arrow3.ac2a1826.png" + "?" + Date.now();

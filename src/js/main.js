@@ -33,6 +33,7 @@ const btnReviews = document.querySelector('.button--reviews');
 const btnArrowLeft = document.querySelector('.button--arrow-left');
 const btnArrowRight = document.querySelector('.button--arrow-right');
 
+
 let curSlide = 0;
 let interval;
 const coords = [50.0611786, 19.9373964];
@@ -87,7 +88,6 @@ const renderMarker = function(){
 const App = function(){
     renderMap();
     renderMarker();
-    renderCalendar();
 }
 
 btnReviews.addEventListener('click', function(){
@@ -202,3 +202,4 @@ allSections.forEach(function(section){
 }); */
 
 App();
+

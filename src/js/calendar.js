@@ -4,7 +4,7 @@ const months = ['January', 'February', 'March', 'April', 'May', 'June',
 'July', 'August', 'September', 'October', 'November', 'December'];
 const date = new Date();
 const currentYear = date.getFullYear()
-const currentMonth = date.getMonth();
+let currentMonth = date.getMonth();
 const currentDay = date.getDate();
 const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 const firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
@@ -14,7 +14,9 @@ const lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getD
 
 const sectionCalendar = document.querySelector('.calendar');
 const chooseDate = document.querySelector('.choose--date');
-const calendar = document.querySelector('.calendar')
+const calendar = document.querySelector('.calendar');
+
+
 
 chooseDate.addEventListener('click', function(){
     calendar.classList.toggle('show');
@@ -24,6 +26,7 @@ document.addEventListener('click', function(event){
     if(!event.target.closest('.choose--date') && !event.target.closest('.calendar'))
         calendar.classList.remove('show');
 });
+
 
 const renderDays = function(){
     return `
@@ -39,16 +42,18 @@ const renderDayTags = function(){
     `
 };
 
-export const renderCalendar = function () {
+const renderCalendar = function () {
     let html =  `
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
-            <button class="btn--swipe swipe--left">
-                <img src="${icon_arrow}" class="arrow--left"/>
-            </button>
-            <button class="btn--swipe swipe--right">
-                <img src="${icon_arrow}" class="arrow--right"/>
-            </button>
+            <div class="buttons--swipe">
+                <button class="btn--swipe swipe--left">
+                    <img src="${icon_arrow}" class="arrow--left"/>
+                </button>
+                <button class="btn--swipe swipe--right">
+                    <img src="${icon_arrow}" class="arrow--right"/>
+                </button>
+            </div>
         </div>
         <ul class="day--name">
             ${renderDayTags()}
@@ -59,5 +64,14 @@ export const renderCalendar = function () {
     `
     sectionCalendar.insertAdjacentHTML('beforeend', html);
 };
+renderCalendar();
 
+const btnPrevNext = document.querySelectorAll('.btn--swipe');
 
+btnPrevNext.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log(btn)
+        currentMonth = btn.classList.contains('swipe--left') ? currentMonth - 1 : currentMonth + 1;
+        renderCalendar();
+    });
+});
