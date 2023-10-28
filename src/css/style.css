@@ -156,7 +156,7 @@ header{
 .calendar{
     background-color: var(--color-light);
     color: var(--color-logo);
-    width: 250px;
+    width: 270px;
     padding: 10px;
     position: absolute;
     top: 83px;
@@ -193,7 +193,9 @@ header{
 .buttons--swipe{
     display: flex;
     justify-content: center;
-    margin-left: 15px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
 }
 
 .btn--swipe{

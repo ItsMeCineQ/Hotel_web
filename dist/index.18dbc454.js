@@ -1039,7 +1039,7 @@ chooseDate.addEventListener("click", function() {
     calendar.classList.toggle("show");
 });
 document.addEventListener("click", function(event) {
-    if (!event.target.closest(".choose--date") && !event.target.closest(".calendar")) calendar.classList.remove("show");
+    if (!event.target.closest(".choose--date") && !event.target.closest(".calendar") && !event.target.closest(".btn--swipe")) calendar.classList.remove("show");
 });
 const renderDays = function() {
     return `

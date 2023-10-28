@@ -20,7 +20,7 @@ chooseDate.addEventListener('click', function(){
 });
 
 document.addEventListener('click', function(event){
-    if(!event.target.closest('.choose--date') && !event.target.closest('.calendar'))
+    if(!event.target.closest('.choose--date') && !event.target.closest('.calendar') && !event.target.closest('.btn--swipe'))
         calendar.classList.remove('show');
 });
 
