@@ -1047,7 +1047,10 @@ const renderDays = function() {
     }, (_, i)=>`<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join("")}
         ${Array.from({
         length: lastDateOfMonth
-    }, (_, i)=>`<li>${i + 1}</li>`).join("")}
+    }, (_, i)=>{
+        let isToday = i === date.getDate() - 1 && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? "day--today" : "";
+        return `<li class="${isToday}">${i + 1}</li>`;
+    }).join("")}
         ${Array.from({
         length: lastDayOfMonth
     }, (_, i)=>`<li class="days_prev_next">${i + 1}</li>`).join("")}

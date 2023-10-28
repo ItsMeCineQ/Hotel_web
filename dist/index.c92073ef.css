@@ -166,6 +166,10 @@ header {
   margin-bottom: 6px;
 }
 
+.day--today {
+  background-color: var(--color-header);
+}
+
 .calendar ul {
   text-align: center;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
