@@ -2,15 +2,15 @@ import icon_arrow from '../img/icon_arrow3.png'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 
 'July', 'August', 'September', 'October', 'November', 'December'];
-const date = new Date();
+const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+let date = new Date();
 let currentYear = date.getFullYear()
 let currentMonth = date.getMonth();
-const currentDay = date.getDate();
-const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 let firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
-let lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 let lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
-let lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
 
 const calendar = document.querySelector('.calendar');
 const chooseDate = document.querySelector('.choose--date');
@@ -24,11 +24,10 @@ document.addEventListener('click', function(event){
         calendar.classList.remove('show');
 });
 
-
 const renderDays = function(){
     return `
         ${Array.from({length: firstDayOfMonth}, (_, i) => `<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
-        ${Array.from({length: lastDay}, (_, i) => `<li>${i + 1}</li>`).join('')}
+        ${Array.from({length: lastDateOfMonth}, (_, i) => `<li>${i + 1}</li>`).join('')}
         ${Array.from({length: lastDayOfMonth}, (_, i) => `<li class="days_prev_next">${i + 1}</li>`).join('')}
     `
 };
@@ -41,7 +40,7 @@ const renderDayTags = function(){
 
 const renderCalendar = function () {
     firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
-    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
     lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
 
@@ -70,14 +69,20 @@ const renderCalendar = function () {
         const btnPrevNext = document.querySelectorAll('.btn--swipe');
         btnPrevNext.forEach(btn => {
             btn.addEventListener('click', () => {
-                console.log(btn)
                 calendar.innerHTML ='';
                 currentMonth = btn.classList.contains('swipe--left') ? currentMonth - 1 : currentMonth + 1;
+                if(currentMonth < 0 || currentMonth > 11){
+                    date = new Date(currentYear, currentMonth);
+                    currentYear = date.getFullYear();
+                    currentMonth = date.getMonth();
+                }else{
+                    date = new Date();
+                }
+                    
                 renderCalendar();
             });
         });
     };
     addEventListeners();
-
 };
 renderCalendar();

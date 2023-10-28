@@ -1016,10 +1016,6 @@ const months = [
     "November",
     "December"
 ];
-const date = new Date();
-let currentYear = date.getFullYear();
-let currentMonth = date.getMonth();
-const currentDay = date.getDate();
 const dayName = [
     "Mon",
     "Tue",
@@ -1029,10 +1025,13 @@ const dayName = [
     "Sat",
     "Sun"
 ];
+let date = new Date();
+let currentYear = date.getFullYear();
+let currentMonth = date.getMonth();
 let firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
-let lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 let lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
-let lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
 const calendar = document.querySelector(".calendar");
 const chooseDate = document.querySelector(".choose--date");
 chooseDate.addEventListener("click", function() {
@@ -1047,7 +1046,7 @@ const renderDays = function() {
         length: firstDayOfMonth
     }, (_, i)=>`<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join("")}
         ${Array.from({
-        length: lastDay
+        length: lastDateOfMonth
     }, (_, i)=>`<li>${i + 1}</li>`).join("")}
         ${Array.from({
         length: lastDayOfMonth
@@ -1061,7 +1060,7 @@ const renderDayTags = function() {
 };
 const renderCalendar = function() {
     firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
-    lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+    lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
     lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
     let html = `
@@ -1088,9 +1087,13 @@ const renderCalendar = function() {
         const btnPrevNext = document.querySelectorAll(".btn--swipe");
         btnPrevNext.forEach((btn)=>{
             btn.addEventListener("click", ()=>{
-                console.log(btn);
                 calendar.innerHTML = "";
                 currentMonth = btn.classList.contains("swipe--left") ? currentMonth - 1 : currentMonth + 1;
+                if (currentMonth < 0 || currentMonth > 11) {
+                    date = new Date(currentYear, currentMonth);
+                    currentYear = date.getFullYear();
+                    currentMonth = date.getMonth();
+                } else date = new Date();
                 renderCalendar();
             });
         });
