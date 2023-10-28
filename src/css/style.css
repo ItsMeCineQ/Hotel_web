@@ -177,8 +177,18 @@ header{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     list-style: none;
-    gap: 5px;
     text-align: center;
+    user-select: none;
+}
+
+.calendar ul li{
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.calendar ul li:hover{
+    cursor: pointer;
+    background-color: var(--color-highlight);
 }
 
 .show{

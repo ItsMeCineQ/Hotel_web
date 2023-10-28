@@ -172,10 +172,21 @@ header {
 
 .calendar ul {
   text-align: center;
+  -webkit-user-select: none;
+  user-select: none;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 5px;
   list-style: none;
   display: grid;
+}
+
+.calendar ul li {
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.calendar ul li:hover {
+  cursor: pointer;
+  background-color: var(--color-highlight);
 }
 
 .show {
