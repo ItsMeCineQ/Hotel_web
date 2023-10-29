@@ -15,6 +15,7 @@ let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay
 const calendar = document.querySelector('.calendar');
 const chooseDate = document.querySelector('.choose--date');
 
+
 chooseDate.addEventListener('click', function(){
     calendar.classList.toggle('show');
 });
@@ -26,12 +27,12 @@ document.addEventListener('click', function(event){
 
 const renderDays = function(){
     return `
-        ${Array.from({length: firstDayOfMonth}, (_, i) => `<li class="days_prev_next">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
+        ${Array.from({length: firstDayOfMonth}, (_, i) => `<li class="days_prev_next list">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
         ${Array.from({length: lastDateOfMonth}, (_, i) => {
             let isToday = i === date.getDate() - 1 && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? 'day--today' : '';
-            return `<li class="${isToday}">${i + 1}</li>`}
+            return `<li class="${isToday} list">${i + 1}</li>`}
         ).join('')}
-        ${Array.from({length: lastDayOfMonth}, (_, i) => `<li class="days_prev_next">${i + 1}</li>`).join('')}
+        ${Array.from({length: lastDayOfMonth}, (_, i) => `<li class="days_prev_next list">${i + 1}</li>`).join('')}
     `
 };
 
@@ -40,6 +41,8 @@ const renderDayTags = function(){
         ${dayName.map(day => `<li>${day}</li>`).join('')}
     `
 };
+
+
 
 const renderCalendar = function () {
     firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
@@ -87,5 +90,14 @@ const renderCalendar = function () {
         });
     };
     addEventListeners();
+
+    const markedDay = function(){
+        const listOfDays = document.querySelectorAll('.list');
+        listOfDays.forEach(day => day.addEventListener('click', function(){
+            console.log('click');
+            day.classList.toggle('selected');
+        }));
+    };
+    markedDay();
 };
 renderCalendar();

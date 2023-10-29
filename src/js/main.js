@@ -5,6 +5,7 @@ import { Cracow } from "./objects";
 import { Wawel } from "./objects";
 import { Station } from "./objects";
 import { renderCalendar } from "./calendar";
+import { markedDay } from "./calendar";
 
 /* import hotel_img_1 from 'src/img/hotel.jpg'
 import hotel_img_2 from 'src/img/about_us_img-1.jpeg'

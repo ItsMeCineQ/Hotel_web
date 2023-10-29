@@ -191,6 +191,10 @@ header{
     background-color: var(--color-highlight);
 }
 
+.selected{
+    background-color: green;
+}
+
 .show{
     display: block;
 }
