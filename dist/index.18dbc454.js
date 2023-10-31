@@ -1102,67 +1102,35 @@ const renderCalendar = function() {
         });
     };
     addEventListeners();
-    /* const markedDay = function(){
-        const stayDuration =[];
-        let startDate = null;
-
-        const listOfDays = document.querySelector('.day--date');
-        listOfDays.addEventListener('click', function(e){
-            if(!e.target.classList.contains('list')) return;
-            
-            const selectedDate = parseInt(e.target.innerText, 10);
-
-            if(startDate === null){
-                startDate = selectedDate;
-                e.target.closest('.list').classList.add('selected');
-            }else{
-                const endDate = selectedDate;
-
-                if(endDate < startDate){
-                    stayDuration.push({start: endDate, end: startDate});
-                }else{
-                    stayDuration.push({start: startDate, end: endDate});
-                }
-                startDate = null;
-                
-                const daysBetween = document.querySelectorAll('.day--date list');
-                daysBetween.forEach(item => {
-                    const day = parseInt(item.innerText, 10);
-                    if(day >= stayDuration[stayDuration.length - 1].start && day <= stayDuration[stayDuration.length -1].end){
-                        item.classList.add('selected');
-                    };
-                });
-            };
-        });
-    }; */ const stayDuration = {
+    const stayDuration = {
         start: null,
         end: null
+    };
+    const clearSelection = function() {
+        const daysBetween = document.querySelectorAll(".day--date .list");
+        daysBetween.forEach((item)=>{
+            item.classList.remove("selected");
+        });
+        stayDuration.start = null;
+        stayDuration.end = null;
     };
     const markedDay = function() {
         const listOfDays = document.querySelector(".day--date");
         listOfDays.addEventListener("click", function(e) {
             if (!e.target.classList.contains("list")) return;
-            const selectedDate = parseInt(e.target.innerText, 10);
+            const clickedDate = parseInt(e.target.innerText, 10);
             if (stayDuration.start === null) {
-                stayDuration.start = selectedDate;
+                stayDuration.start = clickedDate;
                 e.target.closest(".list").classList.add("selected");
             } else if (stayDuration.end === null) {
-                stayDuration.end = selectedDate;
+                stayDuration.end = clickedDate;
                 e.target.closest(".list").classList.add("selected");
                 const daysBetween = document.querySelectorAll(".day--date .list");
                 daysBetween.forEach((item)=>{
                     const day = parseInt(item.innerText, 10);
-                    if (day > stayDuration.start && day < stayDuration.end) item.classList.add("days--between");
+                    if (day > stayDuration.start && day < stayDuration.end) item.classList.add("selected");
                 });
-            } else {
-                stayDuration.start = selectedDate;
-                stayDuration.end = null;
-                const daysBetween = document.querySelectorAll(".day--date .list");
-                daysBetween.forEach((item)=>{
-                    item.classList.remove("days--between");
-                });
-                e.target.closest(".list").classList.add("days--between");
-            }
+            } else clearSelection();
         });
     };
     markedDay();
