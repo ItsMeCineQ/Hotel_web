@@ -3,6 +3,7 @@ import hotel2 from '../img/about_us_img-1.jpeg'
 import hotel3 from '../img/about_us_img-2.jpg'
 import hotel4 from '../img/slider_hotel5.jpeg'
 
+
 const img1 = document.querySelector('.slider--image');
 export const hotels = {
     OldTown : {
