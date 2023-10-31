@@ -39,7 +39,8 @@ let interval;
 const coords = [50.0611786, 19.9373964];
 const zoom = 15;
 const map = L.map('map').setView(coords, zoom);
-const hotels = Object.values(importedHotels);
+const hotels = ['OldTown', 'Cracow', 'Wawel', 'Station'];
+const hotelObjects = Object.values(importedHotels);
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
@@ -62,7 +63,7 @@ const avgPrice = function(hotel){
 };
 
 const renderMarker = function(){
-    hotels.forEach(hotel => {
+    hotelObjects.forEach(hotel => {
         L.marker(hotel.address.localization).addTo(map)
             .bindPopup(`
                 <div class="hotel--head">
@@ -164,10 +165,19 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach(img => imgObserver.observe(img));
 
 const selectHotel = function(){
-    const selectedtHotel = document.querySelector('.form--select');
+    const selectedHotelName = document.querySelector('.form--select').value;
     btnFormSubmit.addEventListener('click', function(){
-        hotels.selectedtHotel.value.availableDates.push(stayDuration);
-        console.log(selectedtHotel.value, stayDuration);
+        const selectedHotel = importedHotels[selectedHotelName];
+        const startDate = stayDuration.start;
+        const endDate = stayDuration.end;
+
+        if(startDate !== null && endDate !== null && endDate >= startDate){
+            const dates = Array.from({length: endDate - startDate + 1}, (_, i) => i + startDate);
+            selectedHotel.availableDates.push(...dates);
+        }
+        console.log(selectedHotel)
+        console.log(stayDuration)
+        // console.log(selectedtHotel, stayDuration);
     });
 };
 selectHotel();
