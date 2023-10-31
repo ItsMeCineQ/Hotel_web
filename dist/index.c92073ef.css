@@ -168,6 +168,7 @@ header {
 
 .day--today {
   background-color: var(--color-header);
+  border-radius: 20px;
 }
 
 .calendar ul {
@@ -180,7 +181,6 @@ header {
 }
 
 .calendar ul li {
-  border-radius: 20px;
   padding: 5px;
 }
 
@@ -191,6 +191,12 @@ header {
 
 .selected {
   background-color: green;
+  border-radius: 20px;
+}
+
+.days--between {
+  background-color: #008a00a6;
+  border-radius: 0;
 }
 
 .show {
