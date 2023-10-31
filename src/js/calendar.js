@@ -1,8 +1,10 @@
 import icon_arrow from '../img/icon_arrow3.png'
+import { hotels } from './objects'
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June', 
 'July', 'August', 'September', 'October', 'November', 'December'];
 const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+export const stayDuration = { start: null, end: null };
 
 let date = new Date();
 let currentYear = date.getFullYear()
@@ -42,9 +44,7 @@ const renderDayTags = function(){
     `
 };
 
-
-
-const renderCalendar = function () {
+export const renderCalendar = function () {
     firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
     lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
@@ -91,7 +91,7 @@ const renderCalendar = function () {
     };
     addEventListeners();
 
-    const stayDuration = { start: null, end: null };
+    
 
     const clearSelection = function() {
         const daysBetween = document.querySelectorAll('.day--date .list');
@@ -107,18 +107,20 @@ const renderCalendar = function () {
         listOfDays.addEventListener('click', function(e){
             if(!e.target.classList.contains('list')) return;
     
-            const clickedDate = parseInt(e.target.innerText, 10);
-    
+            const selectedDate = parseInt(e.target.innerText, 10);
+            
             if (stayDuration.start === null) {
-                stayDuration.start = clickedDate;
+                stayDuration.start = selectedDate;
                 e.target.closest('.list').classList.add('selected');
+                console.log(stayDuration);
             } else if (stayDuration.end === null) {
-                stayDuration.end = clickedDate;
+                stayDuration.end = selectedDate;
                 e.target.closest('.list').classList.add('selected');
+                console.log(stayDuration);
                 const daysBetween = document.querySelectorAll('.day--date .list');
                 daysBetween.forEach(item => {
                     const day = parseInt(item.innerText, 10);
-                    if (day > stayDuration.start && day < stayDuration.end) {
+                    if (day > stayDuration.start && day < stayDuration.end && stayDuration.start <= lastDateOfMonth && stayDuration.end <= lastDateOfMonth) {
                         item.classList.add('selected');
                     }
                 });

@@ -574,8 +574,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"1SICI":[function(require,module,exports) {
-var _objects = require("./objects");
 var _calendar = require("./calendar");
+var _objects = require("./objects");
 "use strict";
 /* import hotel_img_1 from 'src/img/hotel.jpg'
 import hotel_img_2 from 'src/img/about_us_img-1.jpeg'
@@ -600,6 +600,7 @@ const calendar = document.querySelector(".calendar");
 const btnReviews = document.querySelector(".button--reviews");
 const btnArrowLeft = document.querySelector(".button--arrow-left");
 const btnArrowRight = document.querySelector(".button--arrow-right");
+const btnFormSubmit = document.querySelector(".form--submit");
 let curSlide = 0;
 let interval;
 const coords = [
@@ -608,12 +609,7 @@ const coords = [
 ];
 const zoom = 15;
 const map = L.map("map").setView(coords, zoom);
-const hotels = [
-    (0, _objects.OldTown),
-    (0, _objects.Cracow),
-    (0, _objects.Wawel),
-    (0, _objects.Station)
-];
+const hotels = Object.values((0, _objects.hotels));
 document.querySelector(".nav--links").addEventListener("click", function(e) {
     e.preventDefault();
     if (e.target.classList.contains("nav--link")) {
@@ -713,6 +709,14 @@ const imgObserver = new IntersectionObserver(loadImg, {
     rootMargin: "200px"
 });
 imgTargets.forEach((img)=>imgObserver.observe(img));
+const selectHotel = function() {
+    const selectedtHotel = document.querySelector(".form--select");
+    btnFormSubmit.addEventListener("click", function() {
+        hotels.selectedtHotel.value.availableDates.push((0, _calendar.stayDuration));
+        console.log(selectedtHotel.value, (0, _calendar.stayDuration));
+    });
+};
+selectHotel();
 /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
         if(i === index) Image.style.display = 'block';
@@ -750,10 +754,7 @@ allSections.forEach(function(section){
 },{"./objects":"kXREq","./calendar":"fsVt9"}],"kXREq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "OldTown", ()=>OldTown);
-parcelHelpers.export(exports, "Cracow", ()=>Cracow);
-parcelHelpers.export(exports, "Wawel", ()=>Wawel);
-parcelHelpers.export(exports, "Station", ()=>Station);
+parcelHelpers.export(exports, "hotels", ()=>hotels);
 var _hotelJpg = require("../img/hotel.jpg");
 var _hotelJpgDefault = parcelHelpers.interopDefault(_hotelJpg);
 var _aboutUsImg1Jpeg = require("../img/about_us_img-1.jpeg");
@@ -763,162 +764,168 @@ var _aboutUsImg2JpgDefault = parcelHelpers.interopDefault(_aboutUsImg2Jpg);
 var _sliderHotel5Jpeg = require("../img/slider_hotel5.jpeg");
 var _sliderHotel5JpegDefault = parcelHelpers.interopDefault(_sliderHotel5Jpeg);
 const img1 = document.querySelector(".slider--image");
-const OldTown = {
-    name: "Old Town Hotel",
-    address: {
-        city: "Krak\xf3w",
-        street: "Świętego Tomasza",
-        number: 21,
-        localization: [
-            50.0636644,
-            19.9367054
-        ]
+const hotels = {
+    OldTown: {
+        name: "Old Town Hotel",
+        address: {
+            city: "Krak\xf3w",
+            street: "Świętego Tomasza",
+            number: 21,
+            localization: [
+                50.0636644,
+                19.9367054
+            ]
+        },
+        rooms: {
+            standard: [
+                1,
+                2,
+                3,
+                4
+            ],
+            premium: [
+                5,
+                6,
+                7,
+                8
+            ],
+            deluxe: [
+                9,
+                10,
+                11,
+                12
+            ]
+        },
+        price: {
+            standard: 250,
+            premium: 300,
+            deluxe: 400
+        },
+        calcPrice: function(duration) {
+            if (duration >= 3 && duration <= 7) price;
+            if (duration >= 8) price;
+        },
+        review: 4.6,
+        image: (0, _hotelJpgDefault.default),
+        availableDates: []
     },
-    rooms: {
-        standard: [
-            1,
-            2,
-            3,
-            4
-        ],
-        premium: [
-            5,
-            6,
-            7,
-            8
-        ],
-        deluxe: [
-            9,
-            10,
-            11,
-            12
-        ]
+    Cracow: {
+        name: "Cracow Hotel",
+        address: {
+            city: "Krak\xf3w",
+            street: "J\xf3zefa Starego",
+            number: 59,
+            localization: [
+                50.0569229,
+                19.9410478
+            ]
+        },
+        rooms: {
+            standard: [
+                101,
+                102,
+                103
+            ],
+            premium: [
+                201,
+                202,
+                203
+            ],
+            superior: [
+                301,
+                302,
+                303
+            ],
+            deluxe: [
+                401,
+                402,
+                403
+            ]
+        },
+        price: {
+            standard: 300,
+            premium: 370,
+            superior: 450,
+            deluxe: 500
+        },
+        review: 4.7,
+        image: (0, _aboutUsImg1JpegDefault.default),
+        availableDates: []
     },
-    price: {
-        standard: 250,
-        premium: 300,
-        deluxe: 400
+    Wawel: {
+        name: "Wawel Hotel",
+        address: {
+            city: "Krak\xf3w",
+            street: "Podzamcze",
+            number: 33,
+            localization: [
+                50.0557622,
+                19.9333749
+            ]
+        },
+        rooms: {
+            premium: [
+                1.1,
+                1.2,
+                1.3
+            ],
+            superior: [
+                2.1,
+                2.2,
+                2.3
+            ],
+            deluxe: [
+                3.1,
+                3.2,
+                3.3
+            ]
+        },
+        price: {
+            premium: 350,
+            superior: 400,
+            deluxe: 460
+        },
+        review: 4.8,
+        image: (0, _aboutUsImg2JpgDefault.default),
+        availableDates: []
     },
-    calcPrice: function(duration) {
-        if (duration >= 3 && duration <= 7) price;
-        if (duration >= 8) price;
-    },
-    review: 4.6,
-    image: (0, _hotelJpgDefault.default)
-};
-const Cracow = {
-    name: "Cracow Hotel",
-    address: {
-        city: "Krak\xf3w",
-        street: "J\xf3zefa Starego",
-        number: 59,
-        localization: [
-            50.0569229,
-            19.9410478
-        ]
-    },
-    rooms: {
-        standard: [
-            101,
-            102,
-            103
-        ],
-        premium: [
-            201,
-            202,
-            203
-        ],
-        superior: [
-            301,
-            302,
-            303
-        ],
-        deluxe: [
-            401,
-            402,
-            403
-        ]
-    },
-    price: {
-        standard: 300,
-        premium: 370,
-        superior: 450,
-        deluxe: 500
-    },
-    review: 4.7,
-    image: (0, _aboutUsImg1JpegDefault.default)
-};
-const Wawel = {
-    name: "Wawel Hotel",
-    address: {
-        city: "Krak\xf3w",
-        street: "Podzamcze",
-        number: 33,
-        localization: [
-            50.0557622,
-            19.9333749
-        ]
-    },
-    rooms: {
-        premium: [
-            1.1,
-            1.2,
-            1.3
-        ],
-        superior: [
-            2.1,
-            2.2,
-            2.3
-        ],
-        deluxe: [
-            3.1,
-            3.2,
-            3.3
-        ]
-    },
-    price: {
-        premium: 350,
-        superior: 400,
-        deluxe: 460
-    },
-    review: 4.8,
-    image: (0, _aboutUsImg2JpgDefault.default)
-};
-const Station = {
-    name: "Main Station Hotel",
-    address: {
-        city: "Krak\xf3w",
-        street: "Lubicz",
-        number: 64,
-        localization: [
-            50.0647482,
-            19.9471013
-        ]
-    },
-    rooms: {
-        standard: [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-        ],
-        premium: [
-            7,
-            8,
-            9,
-            10,
-            11,
-            12
-        ]
-    },
-    price: {
-        standard: 250,
-        premium: 300
-    },
-    review: 4.2,
-    image: (0, _sliderHotel5JpegDefault.default)
+    Station: {
+        name: "Main Station Hotel",
+        address: {
+            city: "Krak\xf3w",
+            street: "Lubicz",
+            number: 64,
+            localization: [
+                50.0647482,
+                19.9471013
+            ]
+        },
+        rooms: {
+            standard: [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            premium: [
+                7,
+                8,
+                9,
+                10,
+                11,
+                12
+            ]
+        },
+        price: {
+            standard: 250,
+            premium: 300
+        },
+        review: 4.2,
+        image: (0, _sliderHotel5JpegDefault.default),
+        availableDates: []
+    }
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","../img/hotel.jpg":"aVDsL","../img/about_us_img-1.jpeg":"kR8qk","../img/about_us_img-2.jpg":"40D1P","../img/slider_hotel5.jpeg":"d2gvd"}],"fd8tj":[function(require,module,exports) {
@@ -1000,8 +1007,12 @@ module.exports = require("c7b1d049fe31ded9").getBundleURL("10Mjw") + "slider_hot
 
 },{"c7b1d049fe31ded9":"c2l7x"}],"fsVt9":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "stayDuration", ()=>stayDuration);
+parcelHelpers.export(exports, "renderCalendar", ()=>renderCalendar);
 var _iconArrow3Png = require("../img/icon_arrow3.png");
 var _iconArrow3PngDefault = parcelHelpers.interopDefault(_iconArrow3Png);
+var _objects = require("./objects");
 const months = [
     "January",
     "February",
@@ -1025,6 +1036,10 @@ const dayName = [
     "Sat",
     "Sun"
 ];
+const stayDuration = {
+    start: null,
+    end: null
+};
 let date = new Date();
 let currentYear = date.getFullYear();
 let currentMonth = date.getMonth();
@@ -1102,10 +1117,6 @@ const renderCalendar = function() {
         });
     };
     addEventListeners();
-    const stayDuration = {
-        start: null,
-        end: null
-    };
     const clearSelection = function() {
         const daysBetween = document.querySelectorAll(".day--date .list");
         daysBetween.forEach((item)=>{
@@ -1118,17 +1129,19 @@ const renderCalendar = function() {
         const listOfDays = document.querySelector(".day--date");
         listOfDays.addEventListener("click", function(e) {
             if (!e.target.classList.contains("list")) return;
-            const clickedDate = parseInt(e.target.innerText, 10);
+            const selectedDate = parseInt(e.target.innerText, 10);
             if (stayDuration.start === null) {
-                stayDuration.start = clickedDate;
+                stayDuration.start = selectedDate;
                 e.target.closest(".list").classList.add("selected");
+                console.log(stayDuration);
             } else if (stayDuration.end === null) {
-                stayDuration.end = clickedDate;
+                stayDuration.end = selectedDate;
                 e.target.closest(".list").classList.add("selected");
+                console.log(stayDuration);
                 const daysBetween = document.querySelectorAll(".day--date .list");
                 daysBetween.forEach((item)=>{
                     const day = parseInt(item.innerText, 10);
-                    if (day > stayDuration.start && day < stayDuration.end) item.classList.add("selected");
+                    if (day > stayDuration.start && day < stayDuration.end && stayDuration.start <= lastDateOfMonth && stayDuration.end <= lastDateOfMonth) item.classList.add("selected");
                 });
             } else clearSelection();
         });
@@ -1137,7 +1150,7 @@ const renderCalendar = function() {
 };
 renderCalendar();
 
-},{"../img/icon_arrow3.png":"cQhxs","@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj"}],"cQhxs":[function(require,module,exports) {
+},{"../img/icon_arrow3.png":"cQhxs","@parcel/transformer-js/src/esmodule-helpers.js":"fd8tj","./objects":"kXREq"}],"cQhxs":[function(require,module,exports) {
 module.exports = require("ef3fec99a734f203").getBundleURL("10Mjw") + "icon_arrow3.ac2a1826.png" + "?" + Date.now();
 
 },{"ef3fec99a734f203":"c2l7x"}]},["2Bqy8","1SICI"], "1SICI", "parcelRequire0828")

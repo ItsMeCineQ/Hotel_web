@@ -1,11 +1,10 @@
 'use strict'
 
-import { OldTown } from "./objects";
-import { Cracow } from "./objects";
-import { Wawel } from "./objects";
-import { Station } from "./objects";
 import { renderCalendar } from "./calendar";
 import { markedDay } from "./calendar";
+import { renderCalendar } from "./calendar";
+import { stayDuration } from "./calendar";
+import { hotels as importedHotels } from "./objects";
 
 /* import hotel_img_1 from 'src/img/hotel.jpg'
 import hotel_img_2 from 'src/img/about_us_img-1.jpeg'
@@ -33,14 +32,14 @@ const calendar = document.querySelector('.calendar');
 const btnReviews = document.querySelector('.button--reviews');
 const btnArrowLeft = document.querySelector('.button--arrow-left');
 const btnArrowRight = document.querySelector('.button--arrow-right');
-
+const btnFormSubmit = document.querySelector('.form--submit');
 
 let curSlide = 0;
 let interval;
 const coords = [50.0611786, 19.9373964];
 const zoom = 15;
 const map = L.map('map').setView(coords, zoom);
-const hotels = [OldTown, Cracow, Wawel, Station];
+const hotels = Object.values(importedHotels);
 
 document.querySelector('.nav--links').addEventListener('click', function(e){
     e.preventDefault();
@@ -163,6 +162,15 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+const selectHotel = function(){
+    const selectedtHotel = document.querySelector('.form--select');
+    btnFormSubmit.addEventListener('click', function(){
+        hotels.selectedtHotel.value.availableDates.push(stayDuration);
+        console.log(selectedtHotel.value, stayDuration);
+    });
+};
+selectHotel();
 
 /* const showImage = function(index){
     sliderImages.forEach((img, i) => {
