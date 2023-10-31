@@ -1103,11 +1103,10 @@ const renderCalendar = function() {
     };
     addEventListeners();
     const markedDay = function() {
-        const listOfDays = document.querySelectorAll(".list");
-        listOfDays.forEach((day)=>day.addEventListener("click", function() {
-                console.log("click");
-                day.classList.toggle("selected");
-            }));
+        const listOfDays = document.querySelector(".day--date");
+        listOfDays.addEventListener("click", function(e) {
+            e.target.closest(".list").classList.toggle("selected");
+        });
     };
     markedDay();
 };
