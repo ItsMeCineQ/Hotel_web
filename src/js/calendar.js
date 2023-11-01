@@ -27,6 +27,7 @@ document.addEventListener('click', function(event){
         calendar.classList.remove('show');
 });
 
+// Rendering list of days
 const renderDays = function(){
     return `
         ${Array.from({length: firstDayOfMonth}, (_, i) => `<li class="days_prev_next list">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
@@ -38,6 +39,7 @@ const renderDays = function(){
     `
 };
 
+// Rendering day tags from the array
 const renderDayTags = function(){
     return `
         ${dayName.map(day => `<li>${day}</li>`).join('')}
@@ -45,11 +47,13 @@ const renderDayTags = function(){
 };
 
 export const renderCalendar = function () {
+    // Reassigning values
     firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
     lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
     lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
 
+    // Rendering the calendar
     let html =  `
         <div class="current_year-month">
             <h2>${months[currentMonth]}, ${currentYear}</h2>
@@ -71,6 +75,7 @@ export const renderCalendar = function () {
     `
     calendar.insertAdjacentHTML('beforeend', html);
 
+    // Changing months
     const addEventListeners = function(){
         const btnPrevNext = document.querySelectorAll('.btn--swipe');
         btnPrevNext.forEach(btn => {
@@ -92,7 +97,7 @@ export const renderCalendar = function () {
     addEventListeners();
 
     
-
+    // Clearing calendar and availableDays array
     const clearSelection = function() {
         const daysBetween = document.querySelectorAll('.day--date .list');
         daysBetween.forEach(item => {
@@ -102,6 +107,7 @@ export const renderCalendar = function () {
         stayDuration.end = null;
     };
     
+    // Marking clicked days and days between them
     const markedDay = function(){
         const listOfDays = document.querySelector('.day--date');
         listOfDays.addEventListener('click', function(e){
