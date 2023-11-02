@@ -27,6 +27,7 @@ document.addEventListener('click', function(event){
         calendar.classList.remove('show');
 });
 
+// ${firstDayOfMonth.forEach(i => `<li>${i + 1}</li>`)}
 // Rendering list of days
 const renderDays = function(){
     return `

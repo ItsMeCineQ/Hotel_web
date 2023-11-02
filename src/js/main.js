@@ -50,8 +50,8 @@ document.querySelector('.nav--links').addEventListener('click', function(e){
     }
 });
 
-const renderMap = function(){
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+const renderMap = async function(){
+    await L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 };
