@@ -245,8 +245,10 @@ header {
 }
 
 .map--container {
+  box-shadow: 0 0 5px var(--color-logo);
   z-index: 1;
   border: 1px solid #000;
+  border-top: none;
   height: 600px;
   position: relative;
 }
@@ -289,6 +291,9 @@ header {
 .form--book {
   background-color: var(--color-logo);
   color: var(--color-light);
+  box-shadow: 0 0 5px var(--color-logo);
+  border: 1px solid #000;
+  border-bottom: none;
   justify-content: center;
   align-items: center;
   margin-top: 3rem;

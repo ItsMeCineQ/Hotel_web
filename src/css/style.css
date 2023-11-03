@@ -249,6 +249,8 @@ header{
 .map--container{
     height: 600px;
     border: solid 1px black;
+    border-top: none;
+    box-shadow: 0 0 5px var(--color-logo);
     z-index: 1;
     position: relative;
 }
@@ -308,6 +310,9 @@ header{
     color: var(--color-light);
     padding: 1rem;
     position: relative;
+    box-shadow: 0 0 5px var(--color-logo);
+    border: 1px solid black;
+    border-bottom: none;
 }
 
 .form--book label{
