@@ -163,14 +163,16 @@ header{
     right: 67px;
     z-index: 222;
     display: none;
+    box-shadow: 0 0 5px var(--color-logo);
 }
 
 .day--name{
-    margin-bottom: 6px;
+    margin-bottom: 6px;    
 }
 
 .day--today{
     background-color: var(--color-header);
+    color: var(--color-light);
 }
 
 .calendar ul{
@@ -179,6 +181,8 @@ header{
     list-style: none;
     text-align: center;
     user-select: none;
+    border-top: 1px solid var(--color-logo);
+    padding-top: 5px;
 }
 
 .calendar ul li{
