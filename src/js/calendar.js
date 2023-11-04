@@ -1,3 +1,5 @@
+
+import moment from 'moment';
 import icon_arrow from '../img/icon_arrow3.png'
 import { hotels } from './objects'
 
@@ -119,11 +121,11 @@ export const renderCalendar = function () {
             if (stayDuration.start === null) {
                 stayDuration.start = selectedDate;
                 e.target.closest('.list').classList.add('selected');
-                console.log(stayDuration);
+                
             } else if (stayDuration.end === null) {
                 stayDuration.end = selectedDate;
                 e.target.closest('.list').classList.add('selected');
-                console.log(stayDuration);
+                
                 const daysBetween = document.querySelectorAll('.day--date .list');
                 daysBetween.forEach(item => {
                     const day = parseInt(item.innerText, 10);

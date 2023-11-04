@@ -10,6 +10,7 @@
   "author": "Marcin Luty",
   "license": "ISC",
   "dependencies": {
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "moment": "^2.29.4"
   }
 }

@@ -175,9 +175,6 @@ const selectHotel = function(){
             const dates = Array.from({length: endDate - startDate + 1}, (_, i) => i + startDate);
             selectedHotel.availableDates.push(...dates);
         }
-        console.log(selectedHotel)
-        console.log(stayDuration)
-        // console.log(selectedtHotel, stayDuration);
     });
 };
 selectHotel();
