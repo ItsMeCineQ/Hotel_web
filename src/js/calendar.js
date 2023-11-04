@@ -3,22 +3,25 @@ import moment from 'moment';
 import icon_arrow from '../img/icon_arrow3.png'
 import { hotels } from './objects'
 
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 
-'July', 'August', 'September', 'October', 'November', 'December'];
 const dayName = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 export const stayDuration = { start: null, end: null };
 
 let date = new Date();
-let currentYear = date.getFullYear()
-let currentMonth = date.getMonth();
-let firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
+let currentYear = moment().year();
+let currentMonth = moment().month();
+let firstDayOfMonth = moment().startOf(currentMonth);
 let lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-let lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
-let lastDayOfMonth = new Date(currentYear, currentMonth, lastDateOfMonth).getDay();
+let lastDateOfPreviousMonth = moment().endOf(currentMonth - 1);
+let lastDayOfMonth = moment().endOf(currentMonth);
 
 const calendar = document.querySelector('.calendar');
 const chooseDate = document.querySelector('.choose--date');
 
+console.log(moment().date());
+console.log(moment().endOf('November'));
+console.log(moment().startOf(moment().month()))
+console.log(lastDateOfPreviousMonth)
+console.log(lastDayOfMonth)
 
 chooseDate.addEventListener('click', function(){
     calendar.classList.toggle('show');
@@ -32,14 +35,14 @@ document.addEventListener('click', function(event){
 // ${firstDayOfMonth.forEach(i => `<li>${i + 1}</li>`)}
 // Rendering list of days
 const renderDays = function(){
-    return `
-        ${Array.from({length: firstDayOfMonth}, (_, i) => `<li class="days_prev_next list">${lastDateOfPreviousMonth - i}</li>`).reverse().join('')}
+  /*    return `
+        ${Array.from({length: }, (_, i) => `<li class="days_prev_next list">${i + 1}</li>`).join('')}
         ${Array.from({length: lastDateOfMonth}, (_, i) => {
-            let isToday = i === date.getDate() - 1 && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear() ? 'day--today' : '';
+            let isToday = i === moment().date() - 1 && currentMonth === moment().month() && currentYear === moment().year() ? 'day--today' : '';
             return `<li class="${isToday} list">${i + 1}</li>`}
         ).join('')}
-        ${Array.from({length: lastDayOfMonth}, (_, i) => `<li class="days_prev_next list">${i + 1}</li>`).join('')}
-    `
+        ${Array.from({length: 6}, (_, i) => `<li class="days_prev_next list">${i + 1}</li>`).join('')}
+    ` */
 };
 
 // Rendering day tags from the array
@@ -51,15 +54,15 @@ const renderDayTags = function(){
 
 export const renderCalendar = function () {
     // Reassigning values
-    firstDayOfMonth = new Date(currentYear, currentMonth, 0).getDay();
+    firstDayOfMonth = moment().startOf(currentMonth);
     lastDateOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    lastDateOfPreviousMonth = new Date(currentYear, currentMonth, 0).getDate();
-    lastDayOfMonth = new Date(currentYear, currentMonth, firstDayOfMonth).getDay();
+    lastDateOfPreviousMonth = moment().endOf(currentMonth - 1);
+    lastDayOfMonth = moment().endOf(currentMonth);
 
     // Rendering the calendar
     let html =  `
         <div class="current_year-month">
-            <h2>${months[currentMonth]}, ${currentYear}</h2>
+            <h2>${moment().format('MMMM')}, ${currentYear}</h2>
             <div class="buttons--swipe">
                 <button class="btn--swipe swipe--left">
                     <img src="${icon_arrow}" class="arrow--left"/>
